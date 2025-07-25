@@ -1,5 +1,4 @@
 const teamModel = require('../models/teamModel');
-const teamMember = require('../models/teamModel')
 
 exports.createTeam = async (req, res)=>{
     try{
@@ -39,6 +38,30 @@ exports.createTeam = async (req, res)=>{
 
         return res.status(200).json({message: "Team member added successfuly!"})
 
+    }catch(e){
+        return res.status(500).json({message: e.message})
+    }
+}
+
+exports.getTeam = async (req, res)=>{
+    try{
+        const teamMembers = await teamModel.find()
+        if(!teamMembers || teamMembers.length()==0)
+            return res.status(404).json({message: "Team member not found!"})
+        return res.status(200).json({teamMembers})
+    }catch(e){
+        return res.status(500).json({message: e.message})
+    }
+}
+
+exports.getTeamMember = async (req, res)=>{
+    try{
+        const memberID = req.params.id 
+        const member = teamModel.findById(memberID)
+
+        if(!member)
+            return res.status(404).json({message: "Member is not found!"})
+        return res.status(200).json({member})
     }catch(e){
         return res.status(500).json({message: e.message})
     }
