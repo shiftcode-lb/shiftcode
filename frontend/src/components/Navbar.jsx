@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { assets, menuLinks } from '../assets/assests'; // make sure path is correct
-import '../assets/css/navbar.css';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -9,14 +8,14 @@ const Navbar = () => {
 
 
   return (
-    <div className={`flex items-center justify-between  md:px-16 lg:px-24
+    <div className={`flex items-center justify-between  md:px-16 lg:px-24 text-[17px]
     xl:px-32 py-7 px-3 text-gray-600 border-b border-borderColor relative transition-all`}> 
         <Link to='/'>
         <img src={assets.logo} alt="Navbar Logo" className="h-8" />
         </Link>
         <div className={`max-sm:fixed max-sm:h-screen max-sm:w-full max-sm:top-16
         max-sm:border-t border-borderColor right-0 flex flex-col sm:flex-row items-start
-        sm:items-center gap-4 sm:gap-8 max-sm:p-4 transition-all duration-300 z-50 ${location.pathname === "/" ? "bg-light": "bg-white"}
+        sm:items-center gap-4 sm:gap-8 max-sm:p-4 transition-all duration-300 z-50
         ${open ? "max-sm:translate-x-0" : "max-sm:translate-x-full"}`}>
             {menuLinks.map((link, index) => (
                 <Link key={index} to={link.path}>

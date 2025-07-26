@@ -5,10 +5,10 @@ import { FaPlay } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <div className='flex flex-col md:flex-row items-center h-screen  md:px-16 lg:px-24
-    xl:px-32 py-7 px-3 gap-10'>
+    <div className='flex flex-col gap-10 justify-center h-screen md:flex-row items-center md:px-16 lg:px-24 
+    xl:px-32 px-3'>
         {/** Left Side Section */}
-        <div className='w-full md:w-1/2 mb-10 text-center md:text-left'>
+        <div className='w-full md:w-1/2  text-center md:text-left'>
             <div>
                 <h5 className='text-primary text-lg font-medium '>Cyber Security Solutions for</h5>
                 <h1 className="text-primary text-3xl md:text-4xl lg:text-5xl font-bold mt-2">Organizations with Critical Infrastructure</h1>
@@ -30,14 +30,14 @@ const Hero = () => {
             </div>
         </div>
         {/** Right Section */}
-        <div className="w-full md:w-1/2" data-aos="fade-up">
+        <div className="w-full md:w-1/2">
         <div className="relative">
           <img
             src={assets.logo}
             alt="Banner"
             className="w-full max-w-full h-auto banner-img-width"/>
         </div>
-      </div>
+        </div>
     </div>
   )
 }
