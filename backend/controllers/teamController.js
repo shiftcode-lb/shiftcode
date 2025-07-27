@@ -36,7 +36,7 @@ exports.createTeam = async (req, res)=>{
 
         await newMember.save()
 
-        return res.status(200).json({message: "Team member added successfuly!"})
+        return res.status(201).json({message: "Team member added successfuly!"})
 
     }catch(e){
         return res.status(500).json({message: e.message})
@@ -46,7 +46,7 @@ exports.createTeam = async (req, res)=>{
 exports.getTeam = async (req, res)=>{
     try{
         const teamMembers = await teamModel.find()
-        if(!teamMembers || teamMembers.length()==0)
+        if(!teamMembers || teamMembers.length==0)
             return res.status(404).json({message: "Team member not found!"})
         return res.status(200).json({teamMembers})
     }catch(e){

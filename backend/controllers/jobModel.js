@@ -18,7 +18,7 @@ exports.createJob = async (req, res)=>{
         const newJob = new jobModel({title, description, endDate})
         await newJob.save()
 
-        return res.status(200).json({message: "new Joob added successfuly!"})
+        return res.status(201).json({message: "new Joob added successfuly!"})
     }catch(e){
         return res.status(500).json({message: e.message})
     }
@@ -27,7 +27,7 @@ exports.createJob = async (req, res)=>{
 exports.getAllJobs = async (req, res)=>{
     try{
         const jobs = await jobModel.find()
-        if(!jobs || jobs.length()==0)
+        if(!jobs || jobs.length==0)
             return res.status(404).json({message: "jobs not found!"})
         return res.status(200).json({jobs})
     }catch(e){
