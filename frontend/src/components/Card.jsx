@@ -6,6 +6,7 @@ const Card = ({cardTitle, cardText,cardImage}) => {
   return (
     <div className="group bg-coprimary rounded-[5px] px-10 py-10 border-2 border-coprimary
     cursor-pointer transform transition-transform duration-300 hover:-translate-y-2
+    items-center md:items-start text-center md:text-left
     hover:bg-[linear-gradient(135deg,_var(--color-primary)_0%,_var(--color-coprimary)_15%,_var(--color-coprimary)_100%)]">
   
   <div className="bg-background p-3 inline-block rounded-md mb-6 group-hover:bg-primary transition-colors duration-300">

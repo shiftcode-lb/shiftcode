@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import WhyUs from '../components/WhyUs'
 import Section from '../components/Section'
 import { assets } from '../assets/assests'
+import Statics from '../components/Statics'
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       text2={assets.section1_text2}
       image={assets.container1_image}
       />
+      <Statics />
       <Section 
       Title="1st Section"
       text={assets.section2_text2}
