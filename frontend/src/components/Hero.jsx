@@ -1,13 +1,24 @@
-import React from 'react'
+import {React, useEffect} from 'react'
 import { assets } from '../assets/assests'
-import { Link, } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaPlay } from 'react-icons/fa';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
+  
 const Hero = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // default animation duration
+      once: false,     // only animate once
+    });
+  }, []);
   return (
     <div className='flex flex-col gap-10 justify-center h-screen md:flex-row items-center w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'>
         {/** Left Side Section */}
-        <div className='w-full md:w-1/2  text-center md:text-left'>
+        <div className='w-full md:w-1/2  text-center md:text-left' data-aos="fade-up">
             <div>
                 <h5 className='text-primary text-lg font-medium '>Cyber Security Solutions for</h5>
                 <h1 className="text-primary text-3xl md:text-4xl lg:text-5xl font-bold mt-2">Organizations with Critical Infrastructure</h1>
@@ -29,7 +40,7 @@ const Hero = () => {
             </div>
         </div>
         {/** Right Section */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2" data-aos="fade-up">
         <div className="relative">
           <img
             src={assets.logo}
