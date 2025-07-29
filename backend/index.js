@@ -17,7 +17,7 @@ app.use(express.json());
 const companyRoutes = require('./routes/companyRoutes')
 const jobRoutes = require('./routes/jobRoutes')
 const newsRoutes = require('./routes/newsRoutes')
-const projectsRoutes = require('./routes/projectsRoutes')
+const projectsRoutes = require('./routes/projectRoutes')
 const requestsRoutes = require('./routes/requestsRoutes')
 const servicesRoutes = require('./routes/servicesRoutes')
 const teamRoutes = require('./routes/servicesRoutes')

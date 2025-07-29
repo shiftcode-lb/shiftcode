@@ -7,3 +7,5 @@ router.post('/createNews', newsController.createNews)
 router.get('/', newsController.getAllNews)
 
 router.get('/:id', newsController.getNews)
+
+module.exports = router

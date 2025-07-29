@@ -7,3 +7,5 @@ router.post('/createProject', projectsController.createProject)
 router.get('/', projectsController.getAllProjects)
 
 router.get('/:id', projectsController.getProject)
+
+module.exports = router
