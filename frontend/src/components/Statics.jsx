@@ -4,16 +4,16 @@ import { assets } from '../assets/assests'
 
 const Statics = () => {
   return (
-    <div className='flex flex-col md:flex-row justify-center items-center mt-10 gap-6
-    px-3 py-10 md:px-16 lg:px-24 xl:px-32'>
+    <div className='flex flex-col md:flex-row justify-between items-center mt-10 gap-6 my-10
+    w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'>
       <CardSmall 
       cardImage={assets.samll_card1}
-      cardNumber= "4+"
+      cardNumber= "422+"
       cardTitle="Client Project"
       />
       <CardSmall 
       cardImage={assets.samll_card2}
-      cardNumber= "2+"
+      cardNumber= "233+"
       cardTitle="Global Projects"
       />
       <CardSmall 
@@ -23,7 +23,7 @@ const Statics = () => {
       />
       <CardSmall 
       cardImage={assets.samll_card4}
-      cardNumber= "3+"
+      cardNumber= "444+"
       cardTitle="Team Members"
       />
     </div>

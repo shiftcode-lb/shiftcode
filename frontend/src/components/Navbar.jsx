@@ -8,8 +8,10 @@ const Navbar = () => {
 
 
   return (
-    <div className={`flex items-center justify-between  md:px-16 lg:px-24 text-[17px]
-    xl:px-32 py-7 px-3 text-gray-600 border-b border-borderColor relative transition-all`}> 
+    <div className='border-b border-borderColor py-7'>
+    <div className={`flex items-center justify-between  text-[17px]
+    w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl
+  text-gray-600  relative transition-all`}> 
         <Link to='/'>
         <img src={assets.logo} alt="Navbar Logo" className="h-8" />
         </Link>
@@ -30,6 +32,7 @@ const Navbar = () => {
             src={open ? assets.close_icon : assets.menu_icon} alt="menu" />
         </button>
 
+    </div>
     </div>
   )
 };

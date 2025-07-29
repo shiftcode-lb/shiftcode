@@ -5,8 +5,7 @@ import { FaPlay } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <div className='flex flex-col gap-10 justify-center h-screen md:flex-row items-center md:px-16 lg:px-24 
-    xl:px-32 px-3'>
+    <div className='flex flex-col gap-10 justify-center h-screen md:flex-row items-center w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'>
         {/** Left Side Section */}
         <div className='w-full md:w-1/2  text-center md:text-left'>
             <div>
