@@ -20,7 +20,7 @@ const newsRoutes = require('./routes/newsRoutes')
 const projectsRoutes = require('./routes/projectRoutes')
 const requestsRoutes = require('./routes/requestsRoutes')
 const servicesRoutes = require('./routes/servicesRoutes')
-const teamRoutes = require('./routes/servicesRoutes')
+const teamRoutes = require('./routes/teamRoutes')
 
 app.use(`/api/${process.env.API_VERSION}/company`,companyRoutes);
 app.use(`/api/${process.env.API_VERSION}/job`, jobRoutes);
