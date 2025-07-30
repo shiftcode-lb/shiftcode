@@ -7,7 +7,6 @@ const serviceSchema = mongoose.Schema({
         trim: true,
         required: true,
         maxlength:30,
-        enum: ["informative", "e-commerce", "dashboards", "portfolio", "penetration testing"]
     },
     description:{
         type: String,

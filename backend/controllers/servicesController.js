@@ -13,7 +13,7 @@ exports.createService = async (req,res)=>{
             return res.status(400).json({ message: 'Description too short' });
         }
 
-        const newService = new servicesModel({name, image, description, category})
+        const newService = new servicesModel({name, image, description})
         await newService.save()
 
         return res.status(201).json({message: "service created successfully!"})

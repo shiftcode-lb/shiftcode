@@ -57,7 +57,7 @@ exports.getTeam = async (req, res)=>{
 exports.getTeamMember = async (req, res)=>{
     try{
         const memberID = req.params.id 
-        const member = teamModel.findById(memberID)
+        const member = await teamModel.findById(memberID)
 
         if(!member)
             return res.status(404).json({message: "Member is not found!"})

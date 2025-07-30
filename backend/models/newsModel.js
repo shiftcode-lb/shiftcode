@@ -11,7 +11,6 @@ const newsSchema = mongoose.Schema({
     image:{
         type: String,
         trim: true,
-        required: true,
         validate:{
             validator: validator.isURL,
             message: props => `${props.value} is not a valid url!`
