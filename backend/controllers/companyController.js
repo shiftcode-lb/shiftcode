@@ -10,3 +10,15 @@ exports.getCompany = async (req, res)=>{
         return res.status(500).json({message:e.message})
     }
 }
+
+exports.addCompany = async (req, res)=>{
+    try{
+        const {name, email, socialLinks, partner, events, workingDays} = req.body
+        const newCompany = new company({name, email, socialLinks, partner, events, workingDays})
+
+        await newCompany.save()
+        return res.status(201).json({message: "Company added successfully!"})
+    }catch(e){
+        return res.status(500).json({message: e.message})
+    }
+}

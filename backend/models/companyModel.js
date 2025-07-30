@@ -47,24 +47,6 @@ const companySchema = mongoose.Schema({
             message: 'Invalid GitHub URL',
         },
         },
-        facebook: {
-        type: String,
-        trim: true,
-        validate: {
-            validator: (value) =>
-            value === '' || validator.isURL(value),
-            message: 'Invalid Facebook URL',
-        },
-        },
-    },
-    logo:{
-        type: String,
-        trim: true,
-        required: true,
-        validate:{
-            validator: validator.isURL,
-            message: props => `${props.value} is not a valid url!`
-        }
     },
     number: {
         type: String,

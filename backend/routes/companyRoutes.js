@@ -4,4 +4,6 @@ const companyController = require('../controllers/companyController')
 
 router.get('/', companyController.getCompany)
 
+router.post('/createCompany', companyController.addCompany)
+
 module.exports = router
