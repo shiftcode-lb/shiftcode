@@ -13,8 +13,8 @@ exports.getCompany = async (req, res)=>{
 
 exports.addCompany = async (req, res)=>{
     try{
-        const {name, email, socialLinks, partner, events, workingDays} = req.body
-        const newCompany = new company({name, email, socialLinks, partner, events, workingDays})
+        const {name, email, number, socialLinks, partner, events, workingDays} = req.body
+        const newCompany = new company({name, email, number, socialLinks, partner, events, workingDays})
 
         await newCompany.save()
         return res.status(201).json({message: "Company added successfully!"})
