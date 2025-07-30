@@ -18,6 +18,10 @@ const teamSchema = new mongoose.Schema({
             message: props => `${props.value} is not a valid email!`
         }
     },
+    position:{
+        type: String,
+        required: true
+    },
     description:{
         type: String,
         trim: true,

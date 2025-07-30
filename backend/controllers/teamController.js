@@ -2,7 +2,7 @@ const teamModel = require('../models/teamModel');
 
 exports.createTeam = async (req, res)=>{
     try{
-        const {name, email, description, image, socialLinks} =  req.body
+        const {name, email, position, description, image, socialLinks} =  req.body
 
         // validate body
         if (!name || typeof name !== 'string') {
@@ -10,6 +10,9 @@ exports.createTeam = async (req, res)=>{
         }
         if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
             return res.status(400).json({ message: 'Invalid email' });
+        }
+        if (!position || typeof position !== 'string') {
+            return res.status(400).json({ message: 'Invalid name' });
         }
         if (!description || description.length < 10) {
             return res.status(400).json({ message: 'Description too short' });
@@ -29,7 +32,7 @@ exports.createTeam = async (req, res)=>{
             }
         }
 
-        const newMember = new teamModel({name, email, description, image, socialLinks})
+        const newMember = new teamModel({name, email, position, description, image, socialLinks})
 
         await newMember.save()
 
