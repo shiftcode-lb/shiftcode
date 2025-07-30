@@ -27,9 +27,6 @@ exports.createTeam = async (req, res)=>{
             if (socialLinks.github && !/^https?:\/\/.+\..+/.test(socialLinks.github)) {
                 return res.status(400).json({ message: 'Invalid GitHub URL' });
             }
-            if (socialLinks.facebook && !/^https?:\/\/.+\..+/.test(socialLinks.facebook)) {
-                return res.status(400).json({ message: 'Invalid Facebook URL' });
-            }
         }
 
         const newMember = new teamModel({name, email, description, image, socialLinks})

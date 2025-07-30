@@ -61,15 +61,6 @@ const teamSchema = new mongoose.Schema({
             message: 'Invalid GitHub URL',
         },
         },
-        facebook: {
-        type: String,
-        trim: true,
-        validate: {
-            validator: (value) =>
-            value === '' || validator.isURL(value),
-            message: 'Invalid Facebook URL',
-        },
-        },
     },
 }, { timestamps: true })
 
