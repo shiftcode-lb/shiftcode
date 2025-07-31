@@ -3,37 +3,26 @@ import React from 'react'
 const PricingCard = ({image, title, price, features }) => {
     const currancy = import.meta.env.VITE_CURRENCY;
   return (
-    <div className='group w-full bg-coprimary rounded-md flex flex-col justify-between cursor-pointer
-    items-center md:items-start text-center md:text-left 
-    lg:w-[290px] xl:w-[350px] lg:h-[543px] xl:h-[669px] md:w-[210px] md:h-[463px]
-    md:py-[30px] md:px-[15px] lg:px-[14px] lg:py-[30px] xl:py-[55px] xl:pl-[48px] xl:pr-[64px]
-    px-[60px] pt-[28px] pb-[36px]
-    hover:bg-[linear-gradient(135deg,_var(--color-primary)_0%,_var(--color-coprimary)_15%,_var(--color-coprimary)_100%)]
-    '>
-        
-      <div className="bg-background p-3 inline-block rounded-md mb-6
-       group-hover:bg-primary transition-colors duration-300">
-            <figure className="mb-0">
-                <img
-                src={image}
-                alt=""
-                className="filter grayscale group-hover:brightness-0 group-hover:invert transition-all duration-300"
-                />
-            </figure>
-        </div>
-        <h4 className='text-[22px] leading-6 mb-[10px] text-background font-bold
-        group-hover:text-primary transition-colors duration-300'>{title}</h4>
-        <h3 className='text-[26px] leading-[38px] font-bold text-background'>Starting {price}{currancy}</h3>
-        <p className="text-[14px] leading-6 mb-[30px] text-background">
-            {features.map((feature, index) => (
-                <span key={index} className="block">{feature}</span>
-        ))}
-        </p>
-        <div className="">
-            <a href="pricing.html" className="text-[16px] leading-4 py-2.5 px-8 rounded font-bold
-            bg-background group-hover:bg-primary transition-all duration-300 text-coprimary">Order Now</a>
-        </div>
-    </div>
+    
+    <div className="flex flex-col p-6 md:p-3 mx-auto w-full text-left sm:text-center rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 bg-coprimary text-background">
+              <h3 className="mb-4 text-2xl font-semibold">{title}</h3>
+              <p className="font-light sm:text-lg text-background ">Best option for personal use & for your next project.</p>
+              <div className="flex justify-center items-baseline my-8">
+                  <span className="mr-2 text-5xl font-extrabold">{currancy}{price}</span>
+                  <span className="text-gray-400 font-bold">Starting</span>
+              </div>
+              <ul role="list" className="mb-8 space-y-4  ">
+                {features.map((feature, index) => (
+                  <li className="flex  space-x-3 items-center md:items-start text-center md:text-left" key={index}>
+                      <svg className="flex-shrink-0 w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                      <span dangerouslySetInnerHTML={{ __html: feature }} />
+                  </li>
+                ))}
+              </ul>
+              <a href="#" className=" hover:bg-primary/50 bg-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center
+              text-background hover:text-background duration-300
+              ">Get started</a>
+          </div>
   )
 }
 

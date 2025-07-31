@@ -8,6 +8,7 @@ import Services from '../components/Services'
 import Pricing from '../components/Pricing'
 import FAQ from '../components/FAQ'
 import Footer from '../components/Footer'
+import Team from '../components/Team'
 
 const Home = () => {
   return (
@@ -30,6 +31,7 @@ const Home = () => {
       text2={assets.section2_text2}
       />
       <FAQ />
+      <Team />
       <Pricing />
       <Footer />
     </div>

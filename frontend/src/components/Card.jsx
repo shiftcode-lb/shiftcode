@@ -2,7 +2,7 @@ import React from 'react'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Card = ({cardTitle, cardText,cardImage}) => {
+const Card = ({cardTitle, cardText, cardImage}) => {
   return (
     <div className="group bg-coprimary rounded-[5px] px-10 py-10 border-2 border-coprimary
     cursor-pointer transform transition-transform duration-300 hover:-translate-y-2 pl-6 
