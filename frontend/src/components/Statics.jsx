@@ -1,0 +1,33 @@
+import React from 'react'
+import CardSmall from './CardSmall'
+import { assets } from '../assets/assests'
+
+const Statics = () => {
+  return (
+    <div className='flex flex-col md:flex-row justify-between items-center mt-10 gap-6 my-10
+    w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'>
+      <CardSmall 
+      cardImage={assets.samll_card1}
+      cardNumber= "422+"
+      cardTitle="Client Project"
+      />
+      <CardSmall 
+      cardImage={assets.samll_card2}
+      cardNumber= "233+"
+      cardTitle="Global Projects"
+      />
+      <CardSmall 
+      cardImage={assets.samll_card3}
+      cardNumber= "100%"
+      cardTitle="Services Guarantee"
+      />
+      <CardSmall 
+      cardImage={assets.samll_card4}
+      cardNumber= "444+"
+      cardTitle="Team Members"
+      />
+    </div>
+  )
+}
+
+export default Statics

@@ -6,7 +6,7 @@ const DB = require("./database").connectDB;
 require('dotenv').config();
 DB();
 app.use(cors(
-    {origin: 'http://localhost:3001',  // Allow requests only from your frontend
+    {origin: 'http://localhost:5173',  // Allow requests only from your frontend
     methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed HTTP methods
     credentials: true 
     }
