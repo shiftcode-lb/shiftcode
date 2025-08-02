@@ -1,8 +1,18 @@
-import React from 'react'
+import {React, useEffect} from 'react'
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const TeamCard = ({name, position, description, socialLinks, image, email}) => {
+    useEffect(() => {
+        AOS.init({
+          duration: 1000,
+          once: false, // animate every time element enters the viewport
+        });
+      }, []);
   return (
-    <div className="items-center rounded-lg shadow sm:flex bg-gray-800 border-gray-700">
+    <div className="items-center rounded-lg shadow sm:flex bg-gray-800 border-gray-700"
+    data-aos="fade-up" data-aos-delay="300">
               <div className='w-full sm:w-auto'>
                   <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={image} alt="Member picture" />
               </div>

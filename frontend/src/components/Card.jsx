@@ -18,7 +18,7 @@ const Card = ({cardTitle, cardText, cardImage}) => {
     items-center md:items-start text-center md:text-left
     lg:w-[290px] xl:w-[350px] lg:h-[339px] xl:h-[346px] md:w-[210px] md:h-[328px] w-full
     hover:bg-[linear-gradient(135deg,_var(--color-primary)_0%,_var(--color-coprimary)_15%,_var(--color-coprimary)_100%)]"
-    data-aos="fade-up" data-aos-delay="200"
+    data-aos="fade-up" data-aos-delay="300"
     >
   
   <div className="bg-background p-3 inline-block rounded-md mb-6 group-hover:bg-primary transition-colors duration-300">

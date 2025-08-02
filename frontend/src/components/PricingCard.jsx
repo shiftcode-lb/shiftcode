@@ -1,10 +1,20 @@
-import React from 'react'
+import {React, useEffect} from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const PricingCard = ({image, title, price, features }) => {
+  useEffect(()=>{
+      AOS.init({
+        duration: 1000,
+            once: false, // animate every time element enters the viewport
+      })
+    },[]);
     const currancy = import.meta.env.VITE_CURRENCY;
   return (
     
-    <div className="flex flex-col p-6 md:p-3 mx-auto w-full text-left sm:text-center rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 bg-coprimary text-background">
+    <div className="flex flex-col p-6 md:p-3 mx-auto w-full text-left sm:text-center rounded-lg border
+  border-gray-100 shadow dark:border-gray-600 xl:p-8 bg-coprimary text-background"
+    data-aos="fade-up" data-aos-delay="300">
               <h3 className="mb-4 text-2xl font-semibold">{title}</h3>
               <p className="font-light sm:text-lg text-background ">Best option for personal use & for your next project.</p>
               <div className="flex justify-center items-baseline my-8">
@@ -22,7 +32,7 @@ const PricingCard = ({image, title, price, features }) => {
               <a href="#" className=" hover:bg-primary/50 bg-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center
               text-background hover:text-background duration-300
               ">Get started</a>
-          </div>
+    </div>
   )
 }
 

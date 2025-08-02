@@ -17,6 +17,8 @@ const Hero = () => {
   }, []);
   return (
     <div className='flex flex-col gap-10 justify-center h-screen md:flex-row items-center w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'>
+
+      <img src={assets.bg_imag1} alt="" className='w-[300px] h-[400px] absolute right-[-150px] bottom-[-100px]'/>
         {/** Left Side Section */}
         <div className='w-full md:w-1/2  text-center md:text-left' data-aos="fade-up">
             <div>
