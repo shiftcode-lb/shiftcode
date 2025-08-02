@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const DB = require("./database").connectDB;
-
+const domainURL = `${process.env.DOMAIN_URL}`
 require('dotenv').config();
 DB();
 app.use(cors(
-    {origin: 'http://localhost:5173',  // Allow requests only from your frontend
+    {origin: `${domainURL}`,  // Allow requests only from your frontend
     methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed HTTP methods
     credentials: true 
     }
