@@ -24,13 +24,13 @@ const requestsRoutes = require('./routes/requestsRoutes')
 const servicesRoutes = require('./routes/servicesRoutes')
 const teamRoutes = require('./routes/teamRoutes')
 
-app.use(`/api/${process.env.API_VERSION}/company`,companyRoutes);
-app.use(`/api/${process.env.API_VERSION}/job`, jobRoutes);
-app.use(`/api/${process.env.API_VERSION}/news`, newsRoutes);
-app.use(`/api/${process.env.API_VERSION}/projects`, projectsRoutes);
-app.use(`/api/${process.env.API_VERSION}/requests`, requestsRoutes);
-app.use(`/api/${process.env.API_VERSION}/services`, servicesRoutes);
-app.use(`/api/${process.env.API_VERSION}/team`, teamRoutes);
+app.use(`/api/v1/company`,companyRoutes);
+app.use(`/api/v1/job`, jobRoutes);
+app.use(`/api/v1/news`, newsRoutes);
+app.use(`/api/v1/projects`, projectsRoutes);
+app.use(`/api/v1/requests`, requestsRoutes);
+app.use(`/api/v1/services`, servicesRoutes);
+app.use(`/api/v1/team`, teamRoutes);
 
 app.listen(3001, () => {
     console.log("Server is running on port 3001");
