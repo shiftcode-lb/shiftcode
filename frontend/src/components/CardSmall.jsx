@@ -18,7 +18,7 @@ const CardSmall = ({cardImage, cardTitle, cardNumber}) => {
     lg:w-[210px] xl:w-[255px] lg:h-[248px] xl:h-[256px] md:w-[140px] md:h-[269px]
     hover:bg-[linear-gradient(135deg,_var(--color-primary)_0%,_var(--color-coprimary)_15%,_var(--color-coprimary)_100%)] 
     cursor-pointer flex flex-col justify-between" 
-    data-aos="fade-left" data-aos-delay="300"
+    data-aos="fade-up" data-aos-delay="300"
     >
         <div className="inline-block mb-[30px] bg-background py-[11px] px-[10px] rounded-[5px]
         group-hover:bg-primary transition-colors duration-300">

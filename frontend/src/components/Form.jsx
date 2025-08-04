@@ -34,7 +34,8 @@ const Form = () => {
                 <textarea className="w-full mt-2 p-2 h-40 border border-gray-500/30 rounded resize-none outline-none focus:border-indigo-300" required placeholder='Share Your Thoughts, Project Ideas and Question...'></textarea>
             </div>
         
-            <button type="submit" className="mt-5 bg-primary text-background h-12 w-56 px-4 rounded active:scale-95 transition">Send Message</button>
+            <button type="submit" className="cursor-pointer mt-5 bg-primary hover:bg-coprimary text-background
+            h-12 w-56 px-4 rounded active:scale-95 transition hover:">Send Message</button>
         </form>
         </div>
   )

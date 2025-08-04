@@ -14,7 +14,7 @@ const Card = ({cardTitle, cardText, cardImage}) => {
       }, []);
   return (
     <div className="group bg-coprimary rounded-[5px] px-10 py-10 border-2 border-coprimary
-    cursor-pointer transform transition-transform duration-300 hover:-translate-y-2 pl-6 
+    cursor-pointer transform transition-transform duration-300  pl-6 
     items-center md:items-start text-center md:text-left
     lg:w-[290px] xl:w-[350px] lg:h-[339px] xl:h-[346px] md:w-[210px] md:h-[328px] w-full
     hover:bg-[linear-gradient(135deg,_var(--color-primary)_0%,_var(--color-coprimary)_15%,_var(--color-coprimary)_100%)]"

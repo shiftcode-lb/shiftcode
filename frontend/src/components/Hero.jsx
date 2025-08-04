@@ -16,9 +16,9 @@ const Hero = () => {
     });
   }, []);
   return (
-    <div className='flex flex-col gap-10 justify-center h-screen md:flex-row items-center w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'>
+    <div className='flex flex-col gap-10 justify-center h-screen md:flex-row items-center
+    w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl mb-10'>
 
-      <img src={assets.bg_imag1} alt="" className='w-[300px] h-[400px] absolute right-[-150px] bottom-[-100px]'/>
         {/** Left Side Section */}
         <div className='w-full md:w-1/2  text-center md:text-left' data-aos="fade-up">
             <div>
@@ -29,12 +29,12 @@ const Hero = () => {
                 </p>
                 <div className="mt-6 flex justify-center md:justify-start gap-4">
                     <Link to="/about-us"
-                      className="px-6 py-3 bg-primary text-background rounded-[3px] font-semibold transition-transform duration-300 border-2 border-coprimary
+                      className="px-6 py-3 bg-primary text-background rounded font-semibold transition-transform duration-300
                       ease-in-out hover:-translate-y-1 hover:bg-coprimary">
                         Discover More
                     </Link>
           <Link to="/contact-us"
-            className="px-6 py-3 border-2 border-coprimary text-background rounded-[3px] bg-primary hover:bg-coprimary
+            className="px-6 py-3 text-background rounded bg-primary hover:bg-coprimary
             flex items-center justify-center hover:-translate-y-1 transition-transform duration-300">
             <FaPlay />
           </Link>

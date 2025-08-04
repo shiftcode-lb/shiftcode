@@ -12,8 +12,8 @@ const Title = ({title, subtitle, align}) => {
   return (
     <div className={`flex flex-col justify-center items-center text-center my-10
     ${align === "left" && "md:items-center md:text-left"}`}>
-      <h1 className='font-semibold text-3xl md:text-[40px] text-primary mb-2' data-aos="fade-left" data-aos-delay="200">{title}</h1>
-      <p className='text:sm md:text-base text-coprimary mt-2 max-w-156 text-[18px]' data-aos="fade-right" data-aos-delay="200">{subtitle}</p>
+      <h1 className='font-semibold text-3xl md:text-[40px] text-primary mb-2' data-aos="fade-up" data-aos-delay="200">{title}</h1>
+      <p className='text:sm md:text-base text-coprimary mt-2 max-w-156 text-[18px]' data-aos="fade-up" data-aos-delay="200">{subtitle}</p>
     </div>
   )
 }

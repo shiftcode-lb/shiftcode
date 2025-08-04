@@ -4,8 +4,10 @@ import Card from './Card'
 import { assets } from '../assets/assests'
 
 const WhyUs = () => {
+  
   return (
-    <div className='flex flex-col justify-center items-center  w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'>
+    <div className='flex flex-col justify-center items-center  w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'
+    data-aos="fade-up" data-aos-delay="300">
         <div>
             <Title title="Why Choose Us" subtitle="Lorem ipsum dolor sit amet consectetuer adipiscing elitenean commodo ligula eget dolorenean massa. "/>
         </div>
