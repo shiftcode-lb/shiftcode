@@ -4,15 +4,29 @@ const app = express();
 const cors = require('cors');
 const DB = require("./database").connectDB;
 
-const domainURL = process.env.DOMAIN_URL
+const allowedOrigins = [
+  "https://shiftcode-frontend.onrender.com",
+  "http://localhost:5173",
+  process.env.DOMAIN_URL, // only if it's actually defined
+].filter(Boolean); // removes undefined/null if DOMAIN_URL isn't set
 
-DB();
-app.use(cors(
-    {origin: domainURL,  // Allow requests only from your frontend
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed HTTP methods
-    credentials: true 
+console.log("CORS allowed origins:", allowedOrigins); // helpful for debugging
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS not allowed from origin: ${origin}`));
     }
-));
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 
 app.use(express.json());
 
