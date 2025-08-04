@@ -16,10 +16,6 @@ app.use(cors(
 
 app.use(express.json());
 
-// Test route
-app.get('/', (req, res) => {
-  res.send('API is working');
-});
 
 const companyRoutes = require('./routes/companyRoutes')
 const jobRoutes = require('./routes/jobRoutes')
