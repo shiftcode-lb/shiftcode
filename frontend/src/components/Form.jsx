@@ -12,12 +12,11 @@ const Form = () => {
       }, []);
   return (
     <div className='w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl mb-10'>
-      <form className="flex flex-col items-center text-sm" data-aos="fade-up" data-aos-delay="300">
-            <Title 
+      <Title 
             title="Contact Us Here"
             subtitle="Share your ideas, and let’s build something great together."
             />
-            
+      <form className="flex flex-col items-center text-sm my-10" data-aos="fade-up" data-aos-delay="300">
             <div className="flex flex-col md:flex-row items-center gap-8  md:w-[700px] w-full">
                 <div className="w-full">
                     <label className="text-black/70" htmlFor="name">Your Name</label>

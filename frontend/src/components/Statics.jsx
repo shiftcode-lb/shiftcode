@@ -8,7 +8,7 @@ const Statics = () => {
     w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'>
       <CardSmall 
       cardImage={assets.samll_card1}
-      cardNumber= "422+"
+      cardNumber= "5+"
       cardTitle="Client Project"
       />
       <CardSmall 
@@ -23,7 +23,7 @@ const Statics = () => {
       />
       <CardSmall 
       cardImage={assets.samll_card4}
-      cardNumber= "444+"
+      cardNumber= "4+"
       cardTitle="Team Members"
       />
     </div>
