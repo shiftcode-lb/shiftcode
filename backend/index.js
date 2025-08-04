@@ -1,8 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
 const DB = require("./database").connectDB;
-require('dotenv').config();
 
 const domainURL = process.env.DOMAIN_URL
 
