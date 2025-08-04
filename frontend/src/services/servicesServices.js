@@ -5,7 +5,7 @@ export const fetchServices = async () =>{
         const res = await axiosInstance.get('/services');
         return res.data;
     } catch (error) {
-        console.error("Error getting data");
+        console.error("Error getting data", error);
         return
     }
 }

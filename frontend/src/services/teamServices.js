@@ -5,7 +5,7 @@ export const fetchTeam = async () =>{
         const res = await axiosInstance.get('/team');
         return res.data;
     } catch (error) {
-        console.error("Error getting data");
+        console.error("Error getting data", error);
         return
     }
 }
