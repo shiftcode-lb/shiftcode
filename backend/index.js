@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const DB = require("./database").connectDB;
+DB();
 
 const allowedOrigins = [
   "https://shiftcode-frontend.onrender.com",
