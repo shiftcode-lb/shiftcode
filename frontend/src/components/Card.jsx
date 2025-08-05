@@ -23,7 +23,7 @@ const Card = ({cardTitle, cardText, cardImage}) => {
 >
   <div className="flex flex-col h-full justify-between">
     {/* Icon Container */}
-    <div className="p-3 rounded-md mb-3 group-hover:bg-primary transition-colors duration-300 bg-background w-max">
+    <div className="p-3 rounded-md mb-3 group-hover:bg-primary transition-colors duration-300 bg-background w-max mx-auto md:mx-0">
   <figure className="mb-0">
     <img
       src={cardImage}
