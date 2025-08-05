@@ -17,7 +17,7 @@ const Card = ({cardTitle, cardText, cardImage}) => {
   className="group bg-coprimary rounded-[5px] px-10 py-5 border-2 border-coprimary
     transform transition-transform duration-300 pl-6 
     items-center md:items-start text-center md:text-left
-    lg:w-[290px] xl:w-[350px] lg:h-[346px] md:w-[240px] md:h-[3px] w-full
+    lg:w-[290px] xl:w-[350px] lg:h-[346px] md:w-[240px] md:h-[348px] w-full
     hover:bg-[linear-gradient(135deg,_var(--color-primary)_0%,_var(--color-coprimary)_15%,_var(--color-coprimary)_100%)]"
   data-aos="fade-up" data-aos-delay="300"
 >
