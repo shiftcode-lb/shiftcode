@@ -17,7 +17,7 @@ const Home = () => {
       <Hero />
       <WhyUs />
       <Section 
-      Title="1st Section"
+      Title="Build, Design, and Launch — All in One Place"
       text={assets.section1_text1}
       text2={assets.section1_text2}
       image={assets.container2_image}
@@ -25,7 +25,7 @@ const Home = () => {
       <Statics />
       <Services />
       <Section 
-      Title="1st Section"
+      Title="More Than Launch — We Stay With You"
       text={assets.section2_text2}
       image={assets.container2_image}
       flex="reverse"

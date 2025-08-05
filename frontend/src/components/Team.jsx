@@ -24,7 +24,7 @@ const Team = () => {
         title="Our Professional Team"
         subtitle="Lorem ipsum dolor sit amet consectetuer adipiscing elitenean commodo ligula eget dolorenean massa."
         />
-        <div className='grid gap-8 mb-6 lg:mb-16 md:grid-cols-2 mt-10'>
+        <div className='grid gap-8 mb-6 lg:mb-16 md:grid-cols-2 mt-10 w-full'>
           {team.map((teamMember, index)=>(
             <TeamCard key={index}
             name={teamMember.name}

@@ -10,43 +10,53 @@ const TeamCard = ({name, position, description, socialLinks, image, email}) => {
           once: false, // animate every time element enters the viewport
         });
       }, []);
-  return (
-    <div className="items-center rounded-lg shadow sm:flex bg-gray-800 border-gray-700"
-    data-aos="fade-up" data-aos-delay="300">
-              <div className='w-full sm:w-auto'>
-                  <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={image} alt="Member picture" />
-              </div>
-              <div className="p-5">
-                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      {name}
-                  </h3>
-                  <span className="text-gray-500 dark:text-gray-400">{position}</span>
-                  <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">{description}</p>
-                  <ul className="flex space-x-4 sm:mt-0">
-                      <li>
-                          <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clipRule="evenodd" /></svg>
-                          </a>
-                      </li>
-                  </ul>
-              </div>
-          </div> 
-)
-}
+      const socialIcons = {
+  instagram: (
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM4.5 7.75A3.25 3.25 0 017.75 4.5h8.5a3.25 3.25 0 013.25 3.25v8.5a3.25 3.25 0 01-3.25 3.25h-8.5a3.25 3.25 0 01-3.25-3.25v-8.5zm7.5.25a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm0 2a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm5.25-3.25a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z" /></svg>
+  ),
+  linkedin: (
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14C2.2 0 1 .9 1 2v20c0 1.1 1.2 2 2 2h14c.8 0 2-.9 2-2V2c0-1.1-1.2-2-2-2zm-11 19H5V9h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7S5 4.3 6 4.3s1.7.8 1.7 1.7S7 7.7 6 7.7zM19 19h-3v-5.5c0-1.2-.8-1.8-1.5-1.8s-1.5.7-1.5 1.8V19h-3V9h3v1.4c.4-.6 1.2-1.4 2.5-1.4 1.9 0 3.5 1.4 3.5 4V19z" /></svg>
+  ),
+  github: (
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.865 8.32 6.839 9.672.5.093.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.37-1.347-3.37-1.347-.454-1.17-1.11-1.48-1.11-1.48-.908-.63.069-.617.069-.617 1.003.07 1.531 1.045 1.531 1.045.892 1.544 2.341 1.096 2.91.837.092-.662.35-1.105.636-1.355-2.22-.26-4.555-1.14-4.555-5.07 0-1.12.39-2.04 1.03-2.76-.104-.26-.447-1.305.097-2.72 0 0 .84-.28 2.75 1.066A9.582 9.582 0 0112 6.838c.85.005 1.705.12 2.504.35 1.909-1.346 2.747-1.066 2.747-1.066.546 1.415.202 2.46.1 2.72.64.72 1.028 1.64 1.028 2.76 0 3.94-2.339 4.805-4.566 5.06.359.312.678.927.678 1.873 0 1.35-.012 2.44-.012 2.77 0 .27.18.58.688.48C19.137 20.57 22 16.75 22 12.26 22 6.58 17.52 2 12 2z" clipRule="evenodd" /></svg>
+  )
+};
+ return (
+    <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer bg-coprimary
+    rounded-xl hover:border-transparent group hover:bg-primary dark:border-gray-700 dark:hover:border-transparent" data-aos="fade-up" data-aos-delay="300">
+      <img
+        className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
+        src={image}
+        alt={`${name} picture`}
+      />
+
+      <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+        {name}
+      </h1>
+
+      <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+        {position}
+      </p>
+
+      <div className="flex mt-3 -mx-2">
+        {socialLinks &&
+          Object.entries(socialLinks).map(([platform, url]) =>
+            socialIcons[platform] ? (
+              <a
+                key={platform}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={platform}
+                className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+              >
+                {socialIcons[platform]}
+              </a>
+            ) : null
+          )}
+      </div>
+    </div>
+  );
+};
 
 export default TeamCard

@@ -16,8 +16,8 @@ const Hero = () => {
     });
   }, []);
   return (
-    <div className='flex flex-col gap-10 justify-center h-screen md:flex-row items-center
-    w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl mb-10'>
+    <div className='flex flex-col gap-10 justify-center py-[40px] md:flex-row items-center
+    w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl mt-10'>
 
         {/** Left Side Section */}
         <div className='w-full md:w-1/2  text-center md:text-left' data-aos="fade-up">
@@ -42,12 +42,12 @@ const Hero = () => {
             </div>
         </div>
         {/** Right Section */}
-        <div className="w-full md:w-1/2" data-aos="fade-up">
-        <div className="relative">
+        <div className="w-full md:w-1/2 " data-aos="fade-up">
+        <div className="relative ">
           <img
-            src={assets.logo}
+            src={assets.hero_image}
             alt="Banner"
-            className="w-full max-w-full h-auto banner-img-width"/>
+            className="w-full max-w-full banner-img-width h-[350px]"/>
         </div>
         </div>
     </div>
