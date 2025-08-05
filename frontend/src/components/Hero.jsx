@@ -16,8 +16,8 @@ const Hero = () => {
     });
   }, []);
   return (
-    <div className='flex flex-col gap-10 justify-center py-[40px] md:flex-row items-center
-    w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl mt-10'>
+    <div className='flex flex-col gap-10 justify-center  md:flex-row items-center h-[80vh] 
+    w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl my-10'>
 
         {/** Left Side Section */}
         <div className='w-full md:w-1/2  text-center md:text-left' data-aos="fade-up">

@@ -11,6 +11,20 @@ import 'swiper/css/pagination'
 import '../index.css';
 
 const cardsData = [
+    {
+    title: "Logo & Design",
+    image: assets.pricing_image,
+    price: "50",
+    features: [
+      "Custom Logo Design",
+      "2 Revisions Included",
+      "Multiple Formats (PNG, SVG, etc.)",
+      "Delivery Within 3 Days",
+      "Brand Identity Guidance",
+      "Editable Source Files Available"
+    ]
+  },
+
   {
     title: "Portfolio Website",
     image: assets.pricing_image,
@@ -36,25 +50,13 @@ const cardsData = [
       "Hosting Support",
       "UI/UX Design Not Included"
     ]
-  },
-  {
-    title: "Logo & Design",
-    image: assets.pricing_image,
-    price: "50",
-    features: [
-      "Custom Logo Design",
-      "2 Revisions Included",
-      "Multiple Formats (PNG, SVG, etc.)",
-      "Delivery Within 3 Days",
-      "Brand Identity Guidance",
-      "Editable Source Files Available"
-    ]
   }
+  
 ]
 
 const Pricing = () => {
   return (
-    <div className='flex flex-col justify-center items-center
+    <div className='flex flex-col justify-center items-center mb-10
     w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'>
         <Title 
         title="Your Pricing Plan"
