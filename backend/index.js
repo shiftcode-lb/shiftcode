@@ -8,6 +8,8 @@ DB();
 const allowedOrigins = [
   "https://shiftcode-frontend.onrender.com",
   "http://localhost:5173",
+  "https://www.shiftcode.org",
+  "https://shiftcode.org",
   process.env.DOMAIN_URL, // only if it's actually defined
 ].filter(Boolean); // removes undefined/null if DOMAIN_URL isn't set
 
