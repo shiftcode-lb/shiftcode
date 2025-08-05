@@ -11,4 +11,15 @@
   --color-coprimary: #2f4157;
   --color-borderColor: #2f4157;
 }
+.swiper-pagination-bullet {
+  background-color: #587d8f !important; /* inactive bullet color */
+  opacity: 0.7 !important;           /* optional: less visible */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #2f4157 !important; /* active bullet color (example orange) */
+  opacity: 1 !important;
+}
+
+
 

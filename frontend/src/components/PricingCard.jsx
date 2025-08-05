@@ -13,7 +13,7 @@ const PricingCard = ({image, title, price, features }) => {
   return (
     
     <div className="flex flex-col p-6 md:p-3 mx-auto w-full text-left sm:text-center rounded-lg border
-  border-gray-100 shadow dark:border-gray-600 xl:p-8 bg-coprimary text-background"
+  border-gray-100 shadow dark:border-gray-600 xl:p-8 bg-coprimary text-background h-auto" 
     data-aos="fade-up" data-aos-delay="300">
               <h3 className="mb-4 text-2xl font-semibold">{title}</h3>
               <p className="font-light sm:text-lg text-background ">Best option for personal use & for your next project.</p>

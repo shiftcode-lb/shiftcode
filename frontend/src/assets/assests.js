@@ -13,12 +13,15 @@ import samll_card3 from "./images/cyber-section-icon3.png";
 import samll_card4 from "./images/cyber-section-icon4.png";
 import pricing_image from "./images/pricing-plan-icon1.png";
 import bg_imag1 from "./images/bg-image2.png";
+import ui_image from "./images/ui-ux.png";
+import hero_image from "./images/hero.png";
 
-const section1_text1 = "Lorem ipsum dolor sit amet consectetuer adipiscing elitenean commo doligula eget dolorenean massa.In enim justo, rhoncus ut, imperdiet avene natis vitae justo nullam dictum felis eu pede mollis pretium Inte ger tincid unt cras dapibus";
-const section1_text2 = "Vamus elementum semper nisi aenean vulputate eleife nd tellus onsec tet ueradip.";
 
-const section2_text1 = "Lorem ipsum dolor sit amet consectetuer adipiscing elitenean commo doligula eget dolorenean massa.In enim justo, rhoncus ut, imperdiet avene natis vitae justo nullam dictum felis eu pede mollis pretium Inte ger tincid unt cras dapibus";
-const section2_text2 = "Vamus elementum semper nisi aenean vulputate eleife nd tellus onsec tet ueradip.";
+const section1_text1 = "Whether you're starting from scratch or refreshing your brand, we bring your digital vision to life. From high-performance websites to captivating designs, our team is here to make it happen.";
+const section1_text2 = "We don’t just build websites — we ensure your project is scalable, secure, and ready for real-world users.";
+
+const section2_text1 = "We offer secure hosting, regular maintenance, and hands-on support to keep your digital presence fast, stable, and safe — long after launch day.";
+const section2_text2 = "Stay online, stay fast, and stay secure with our ongoing support and reliable infrastructure.";
 
 export const assets = {
     logo,
@@ -39,7 +42,9 @@ export const assets = {
     samll_card4,
     container2_image,
     pricing_image,
-    bg_imag1
+    bg_imag1,
+    ui_image,
+    hero_image
 }
 
 

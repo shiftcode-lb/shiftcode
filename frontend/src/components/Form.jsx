@@ -21,17 +21,17 @@ const Form = () => {
             <div className="flex flex-col md:flex-row items-center gap-8  md:w-[700px] w-full">
                 <div className="w-full">
                     <label className="text-black/70" htmlFor="name">Your Name</label>
-                    <input className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-indigo-300" type="text" required placeholder='Enter your full name'/>
+                    <input className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor" type="text" required placeholder='Enter your full name'/>
                 </div>
                 <div className="w-full">
                     <label className="text-black/70" htmlFor="name">Your Email</label>
-                    <input className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-indigo-300" type="email" required placeholder='example@email.com'/>
+                    <input className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor" type="email" required placeholder='example@email.com'/>
                 </div>
             </div>
         
             <div className="mt-6 w-full md:w-[700px]">
                 <label className="text-black/70" htmlFor="name">Message</label>
-                <textarea className="w-full mt-2 p-2 h-40 border border-gray-500/30 rounded resize-none outline-none focus:border-indigo-300" required placeholder='Share Your Thoughts, Project Ideas and Question...'></textarea>
+                <textarea className="w-full mt-2 p-2 h-40 border border-gray-500/30 rounded resize-none outline-none focus:border-borderColor" required placeholder='Share Your Thoughts, Project Ideas and Question...'></textarea>
             </div>
         
             <button type="submit" className="cursor-pointer mt-5 bg-primary hover:bg-coprimary text-background
