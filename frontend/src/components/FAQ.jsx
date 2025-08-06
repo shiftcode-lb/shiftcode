@@ -40,11 +40,7 @@ const FAQ = () => {
       
         <div className="flex flex-col justify-center items-center mb-10 relative
   w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl">
-    <img
-  src={assets.bg_imag1}
-  alt=""
-  className="hidden md:block absolute left-[-150px] top-1/2 -translate-y-1/2 w-[300px] opacity-20 pointer-events-none select-none"
-/>
+    
   <Title
     title="Frequently Asked Questions"
     subtitle="Proactively answering FAQs boosts user confidence and cuts down on support tickets"

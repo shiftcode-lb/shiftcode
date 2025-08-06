@@ -6,6 +6,7 @@ import { FaPlay } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import '../assets/css/FloatingIcons.css';
 
   
 const Hero = () => {
@@ -16,7 +17,7 @@ const Hero = () => {
     });
   }, []);
   return (
-    <div className='flex flex-col gap-10 justify-center  md:flex-row items-center h-[80vh] 
+    <div className='flex flex-col gap-10 justify-center  md:flex-row items-center h-[80vh] relative 
     w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl my-10'>
 
         {/** Left Side Section */}
@@ -43,13 +44,23 @@ const Hero = () => {
         </div>
         {/** Right Section */}
         <div className="w-full md:w-1/2 " data-aos="fade-up">
-        <div className="relative ">
+        <div className="relative w-full flex justify-center md:items-center">
           <img
             src={assets.hero_image}
             alt="Banner"
-            className="w-full max-w-full banner-img-width h-[350px]"/>
+            className="md:w-full max-w-full banner-img-width md:h-full h-[350px] w-[350px] "/>
         </div>
         </div>
+        {/** Floating images */}
+        
+<div className="anim-elements">
+    <img src={assets.animate1} alt="" className="anim-element" />
+    <img src={assets.animate2} alt="" className="anim-element" />
+    <img src={assets.animate3} alt="" className="anim-element" />
+    <img src={assets.animate4} alt="" className="anim-element" />
+    <img src={assets.animate5} alt="" className="anim-element" />
+  </div>
+
     </div>
   )
 }

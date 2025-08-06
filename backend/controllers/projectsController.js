@@ -29,9 +29,9 @@ exports.createProject = async (req,res)=>{
 exports.getAllProjects = async (req, res)=>{
     try{
         const projects = await projectModel.find()
-        if(!projects || projects.length==0)
+        if(!projects)
             return res.status(404).json({message: "Projects not found!"})
-        return res.status(201).json({projects})
+        return res.status(200).json({projects})
     }catch(e){
         return res.status(500).json({message:e.message})
     }

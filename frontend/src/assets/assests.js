@@ -11,11 +11,17 @@ import samll_card1 from "./images/cyber-section-icon1.png";
 import samll_card2 from "./images/cyber-section-icon2.png";
 import samll_card3 from "./images/cyber-section-icon3.png";
 import samll_card4 from "./images/cyber-section-icon4.png";
-import pricing_image from "./images/pricing-plan-icon1.png";
 import bg_imag1 from "./images/bg-image2.png";
-import ui_image from "./images/ui-ux.png";
 import hero_image from "./images/hero.png";
-
+import bg_image2 from "./images/bg-image3.png";
+import bg_image3 from "./images/bg-image1.png"
+import footer_image from "./images/footer-image.png"
+import footer_image2 from "./images/footer2.png"
+import animate1 from "./images/animated-icons/animate1.png"
+import animate2 from "./images/animated-icons/animate2.png"
+import animate3 from "./images/animated-icons/animate3.png"
+import animate4 from "./images/animated-icons/animate4.png"
+import animate5 from "./images/animated-icons/animate5.png"
 
 const section1_text1 = "Whether you're starting from scratch or refreshing your brand, we bring your digital vision to life. From high-performance websites to captivating designs, our team is here to make it happen.";
 const section1_text2 = "We don’t just build websites — we ensure your project is scalable, secure, and ready for real-world users.";
@@ -41,10 +47,17 @@ export const assets = {
     samll_card3,
     samll_card4,
     container2_image,
-    pricing_image,
     bg_imag1,
-    ui_image,
-    hero_image
+    hero_image,
+    bg_image3,
+    bg_image2,
+    footer_image,
+    footer_image2,
+    animate1,
+    animate2,
+    animate3,
+    animate4,
+    animate5
 }
 
 

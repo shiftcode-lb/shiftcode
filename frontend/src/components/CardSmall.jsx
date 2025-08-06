@@ -3,7 +3,7 @@ import {React, useEffect} from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const CardSmall = ({cardImage, cardTitle, cardNumber}) => {
+const CardSmall = ({cardImage, cardTitle, cardNumber,tag}) => {
 
   useEffect(()=>{
     AOS.init({
@@ -27,7 +27,7 @@ const CardSmall = ({cardImage, cardTitle, cardNumber}) => {
               filter grayscale group-hover:brightness-0 group-hover:invert transition-all duration-300'/>
             </figure>
         </div>
-        <h3 className="text-background mb-[8px] text-[30px] leading-7 font-bold group-hover:text-primary transition-colors duration-300">{cardNumber}</h3>
+        <h3 className="text-background mb-[8px] text-[30px] leading-7 font-bold group-hover:text-primary transition-colors duration-300">{cardNumber}{tag}</h3>
         <h5 className="text-background text-[18px]">{cardTitle}</h5>
     </div>
   )

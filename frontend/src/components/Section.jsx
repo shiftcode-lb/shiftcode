@@ -3,6 +3,7 @@ import { Link, } from 'react-router-dom';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { assets } from '../assets/assests';
 
 const Section = ({Title, image, text, text2, flex}) => {
   useEffect(() => {
@@ -14,8 +15,13 @@ const Section = ({Title, image, text, text2, flex}) => {
   
   return (
     
-    <div className={`flex flex-col  md:flex-row ${flex === "reverse" ? "md:flex-row-reverse" : ""} my-20 gap-10
+    <div className={`relative flex flex-col  md:flex-row ${flex === "reverse" ? "md:flex-row-reverse" : ""} my-20 gap-10
     justify-between items-center w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl `}>
+      <img
+        src={assets.bg_image2}
+        alt=""
+        className=" absolute right-[-150px] top-1/2 -translate-y-1/2 w-[300px] opacity-20 pointer-events-none select-none"
+      />
       {/** Left banner  */}
       <div className='flex flex-col gap-3 md:w-1/2 w-full'>
                         <h3 className='text-[40px] font-bold text-coprimary mb-[27px] leading-[40px]'>{Title}</h3>

@@ -2,7 +2,7 @@ import {React, useEffect} from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const PricingCard = ({image, title, price, features }) => {
+const PricingCard = ({image, title, price, features, subtitle }) => {
   useEffect(()=>{
       AOS.init({
         duration: 1000,
@@ -16,7 +16,7 @@ const PricingCard = ({image, title, price, features }) => {
   border-gray-100 shadow dark:border-gray-600 xl:p-8 bg-coprimary text-background h-auto" 
     data-aos="fade-up" data-aos-delay="300">
               <h3 className="mb-4 text-2xl font-semibold">{title}</h3>
-              <p className="font-light sm:text-lg text-background ">Best option for personal use & for your next project.</p>
+              <p className="font-light sm:text-lg text-background ">{subtitle}</p>
               <div className="flex justify-center items-baseline my-8">
                   <span className="mr-2 text-5xl font-extrabold">{currancy}{price}</span>
                   <span className="text-gray-400 font-bold">Starting</span>

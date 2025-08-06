@@ -2,6 +2,7 @@ import {React, useEffect} from 'react'
 import Title from './Title'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { assets } from '../assets/assests';
 
 const Form = () => {
     useEffect(() => {
@@ -11,7 +12,12 @@ const Form = () => {
         });
       }, []);
   return (
-    <div className='w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl mb-10'>
+    <div className='relative w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl mb-10'>
+      <img
+        src={assets.bg_image3}
+        alt=""
+        className=" absolute left-[-250px] top-1/2 -translate-y-1/2 w-[300px] opacity-20 pointer-events-none select-none"
+      />
       <Title 
             title="Contact Us Here"
             subtitle="Share your ideas, and let’s build something great together."

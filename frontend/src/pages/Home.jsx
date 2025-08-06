@@ -25,8 +25,9 @@ const Home = () => {
       <Statics />
       <Services />
       <Section 
+      
       Title="More Than Launch — We Stay With You"
-      text={assets.section2_text2}
+      text={assets.section2_text1}
       image={assets.container2_image}
       flex="reverse"
       text2={assets.section2_text2}

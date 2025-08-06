@@ -13,6 +13,7 @@ import '../index.css';
 const cardsData = [
     {
     title: "Logo & Design",
+    subtitle: "Make your brand stand out with stunning design",
     image: assets.pricing_image,
     price: "50",
     features: [
@@ -27,6 +28,7 @@ const cardsData = [
 
   {
     title: "Portfolio Website",
+    subtitle: "Showcase your skills and projects with a modern touch",
     image: assets.pricing_image,
     price: "200",
     features: [
@@ -35,11 +37,12 @@ const cardsData = [
       "Basic Contact Form Integration",
       "SEO-Ready Setup",
       "Hosting Support",
-      "UI/UX Design Not Included"
+      "Interactive Work Samples"
     ]
   },
   {
     title: "Online Store",
+    subtitle: "Launch and grow your business with ease",
     image: assets.pricing_image,
     price: "300",
     features: [
@@ -48,7 +51,7 @@ const cardsData = [
       "Basic Payment Integration",
       "Responsive Design",
       "Hosting Support",
-      "UI/UX Design Not Included"
+      "Interactive Work Samples"
     ]
   }
   
