@@ -13,7 +13,7 @@ import Form from '../components/Form'
 
 const Home = () => {
   return (
-    <div className='pt-[130px] md:pt-[88px]'>
+    <div className='pt-[100px] md:pt-[88px]'>
       <Hero />
       <WhyUs />
       <Section 
