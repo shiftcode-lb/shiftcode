@@ -29,7 +29,7 @@ const PricingCard = ({image, title, price, features, subtitle }) => {
                   </li>
                 ))}
               </ul>
-              <a href="#" className=" hover:bg-primary/50 bg-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center
+              <a href="#contact-us" className=" hover:bg-primary/50 bg-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center
               text-background hover:text-background duration-300
               ">Get started</a>
     </div>
