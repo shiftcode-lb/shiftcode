@@ -62,10 +62,10 @@ export const assets = {
 
 
 export const menuLinks = [
-    {name: "Home", path: "/"},
-    {name: "About", path: "/about"},
-    {name:"Services", path: "/services"},
-    {name: "Pricing", path: "/pricing"},
-    {name: "Contact Us", path:"/contact-us"}
+    {name: "Home", path: "#top"},
+    {name: "About", path: "#about"},
+    {name:"Services", path: "#services"},
+    {name: "Pricing", path: "#pricing"},
+    {name: "Contact Us", path:"#contact-us"}
 ];
 

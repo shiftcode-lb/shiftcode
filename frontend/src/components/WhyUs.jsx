@@ -22,13 +22,13 @@ const WhyUs = () => {
     },
     {
       cardTitle: 'Always-On Support',
-      cardText: 'We’re here when you need us. Whether it’s a new feature, an urgent fix, or ongoing updates — our team ensures your project stays live and secure 24/7.',
+      cardText: 'We’re here when you need us. Whether it’s a new feature or an urgent fix — our team ensures your project stays live and secure 24/7.',
       cardImage: assets.whyus_icon3,
     },
   ];
 
   return (
-    <div
+    <div 
       className="flex flex-col justify-center items-center w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl"
       data-aos="fade-up"
       data-aos-delay="300"

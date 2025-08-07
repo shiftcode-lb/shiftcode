@@ -23,7 +23,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div className='flex flex-col justify-center items-center w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'>
+    <div className='flex flex-col justify-center items-center w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl ' id='services'>
       <Title
         title="Services"
         subtitle="Explore the range of expert solutions we provide to help your business grow and succeed"

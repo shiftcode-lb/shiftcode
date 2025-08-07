@@ -1,18 +1,59 @@
-import {React, useEffect} from 'react'
+import {React, useEffect, useState} from 'react'
 import Title from './Title'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { assets } from '../assets/assests';
 
+import axiosInstance from '../services/axiosInstance';
+
 const Form = () => {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [loading, setLoading] = useState(false);
+  const [responseMsg, setResponseMsg] = useState('');
+  const [responseType, setResponseType] = useState('');
+
+
+    useEffect(() => {
+  if (responseMsg) {
+    const timer = setTimeout(() => {
+      setResponseMsg('');
+      setResponseType('');
+    }, 10000); // 10 seconds
+
+    return () => clearTimeout(timer); // clear on unmount or re-render
+  }
+}, [responseMsg]);
+
+
     useEffect(() => {
         AOS.init({
           duration: 1000,
           once: false, // animate every time element enters the viewport
         });
       }, []);
+      const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setResponseMsg('');
+
+    try {
+      const { data } = await axiosInstance.post('/mail', form);
+      setResponseMsg(data.message || 'Message sent successfully!');
+      setForm({ name: '', email: '', message: '' });
+      setResponseType('success');
+    } catch (err) {
+      console.error('Error sending message:', err);
+      setResponseMsg(err.response?.data?.message || 'Something went wrong.');
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
-    <div className='relative w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl mb-10'>
+    <div className='relative w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl mb-10' id='contact-us'>
       <img
         src={assets.bg_image3}
         alt=""
@@ -22,25 +63,41 @@ const Form = () => {
             title="Contact Us Here"
             subtitle="Share your ideas, and let’s build something great together."
             />
-      <form className="flex flex-col items-center text-sm my-10" data-aos="fade-up" data-aos-delay="300">
+      <form className="flex flex-col items-center text-sm my-10" data-aos="fade-up" data-aos-delay="300" onSubmit={handleSubmit}>
             <div className="flex flex-col md:flex-row items-center gap-8 w-full">
                 <div className="w-full">
                     <label className="text-black/70" htmlFor="name">Your Name</label>
-                    <input className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor" type="text" required placeholder='Enter your full name'/>
+                    <input name='name' className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor" value={form.name} onChange={handleChange} type="text" required placeholder='Enter your full name'/>
                 </div>
                 <div className="w-full">
-                    <label className="text-black/70" htmlFor="name">Your Email</label>
-                    <input className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor" type="email" required placeholder='example@email.com'/>
+                    <label className="text-black/70" htmlFor="email">Your Email</label>
+                    <input name='email' className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor" value={form.email} onChange={handleChange} type="email" required placeholder='example@email.com'/>
                 </div>
             </div>
         
             <div className="mt-6 w-full">
-                <label className="text-black/70" htmlFor="name">Message</label>
-                <textarea className="w-full mt-2 p-2 h-40 border border-gray-500/30 rounded resize-none outline-none focus:border-borderColor" required placeholder='Share Your Thoughts, Project Ideas and Question...'></textarea>
+                <label className="text-black/70" htmlFor="message">Message</label>
+                <textarea name='message' className="w-full mt-2 p-2 h-40 border border-gray-500/30 rounded resize-none outline-none focus:border-borderColor" value={form.message} onChange={handleChange} required placeholder='Share Your Thoughts, Project Ideas and Question...'></textarea>
             </div>
         
-            <button type="submit" className="cursor-pointer mt-5 bg-primary hover:bg-coprimary text-background
-            h-12 w-56 px-4 rounded active:scale-95 transition hover:">Send Message</button>
+             <button
+        type="submit"
+        disabled={loading}
+        className="cursor-pointer mt-5 bg-primary hover:bg-coprimary text-background h-12 w-56 px-4 rounded active:scale-95 transition"
+      >
+        {loading ? 'Sending...' : 'Send Message'}
+      </button>
+
+      {responseMsg && (
+  <p
+    className={`mt-4 text-center ${
+      responseType === 'success' ? 'text-green-600' : 'text-red-600'
+    }`}
+  >
+    {responseMsg}
+  </p>
+)}
+
         </form>
         </div>
   )

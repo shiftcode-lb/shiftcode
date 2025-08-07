@@ -12,7 +12,7 @@ const PricingCard = ({image, title, price, features, subtitle }) => {
     const currancy = import.meta.env.VITE_CURRENCY;
   return (
     
-    <div className="flex flex-col p-6 md:p-3 mx-auto w-full text-left sm:text-center rounded-lg border
+    <div className="flex flex-col p-6 md:p-3 mx-auto w-full text-center rounded-lg border
   border-gray-100 shadow dark:border-gray-600 xl:p-8 bg-coprimary text-background h-auto" 
     data-aos="fade-up" data-aos-delay="300">
               <h3 className="mb-4 text-2xl font-semibold">{title}</h3>

@@ -16,11 +16,13 @@ const Section = ({Title, image, text, text2, flex}) => {
   return (
     
     <div className={`relative flex flex-col  md:flex-row ${flex === "reverse" ? "md:flex-row-reverse" : ""} my-20 gap-10
-    justify-between items-center w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl `}>
+    justify-between items-center w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl `} id='about'>
       <img
         src={assets.bg_image2}
         alt=""
-        className=" absolute right-[-150px] top-1/2 -translate-y-1/2 w-[300px] opacity-20 pointer-events-none select-none"
+        className={` absolute top-1/2 -translate-y-1/2 w-[300px] opacity-20 pointer-events-none select-none
+          ${flex === "reverse" ? "right-[0px]" : "left-[0px]"}
+          `}
       />
       {/** Left banner  */}
       <div className='flex flex-col gap-3 md:w-1/2 w-full'>
@@ -29,11 +31,13 @@ const Section = ({Title, image, text, text2, flex}) => {
                         <br />
                         <p className='text-[18px] text-primary font-normal leading-relaxed mb-[31px]'>{text2}</p>
                         <div className="mt-5">
-                            <Link to="/contact-us"
-                            className="inline-block px-6 py-3  text-background rounded bg-primary hover:bg-coprimary
-                            transform hover:-translate-y-1 transition-transform duration-300">
-                              Contact Us
-                            </Link>
+                            <a
+  href="#contact-us"
+  className="inline-block px-6 py-3 text-background rounded bg-primary hover:bg-coprimary
+  transform hover:-translate-y-1 transition-transform duration-300"
+>
+  Contact Us
+</a>
                         </div>
       </div>
       {/** Right banner */}
