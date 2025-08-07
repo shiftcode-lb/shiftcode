@@ -13,7 +13,7 @@ import Form from '../components/Form'
 
 const Home = () => {
   return (
-    <div>
+    <div className='pt-[88px]'>
       <Hero />
       <WhyUs />
       <Section 
