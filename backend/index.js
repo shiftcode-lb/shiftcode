@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
+
 const DB = require("./database").connectDB;
 DB();
 
@@ -41,6 +42,7 @@ const projectsRoutes = require('./routes/projectRoutes')
 const requestsRoutes = require('./routes/requestsRoutes')
 const servicesRoutes = require('./routes/servicesRoutes')
 const teamRoutes = require('./routes/teamRoutes')
+const mailRoutes = require('./routes/emailRoutes')
 
 app.use(`/api/v1/company`,companyRoutes);
 app.use(`/api/v1/job`, jobRoutes);
@@ -49,6 +51,7 @@ app.use(`/api/v1/projects`, projectsRoutes);
 app.use(`/api/v1/requests`, requestsRoutes);
 app.use(`/api/v1/services`, servicesRoutes);
 app.use(`/api/v1/team`, teamRoutes);
+app.use('/api/v1/mail', mailRoutes)
 
 app.listen(3001, () => {
     console.log("Server is running on port 3001");
