@@ -20,7 +20,7 @@ const cardsData = [
       "Custom Logo Design",
       "2 Revisions Included",
       "Multiple Formats (PNG, SVG, etc.)",
-      "Delivery Within 3 Days",
+      "Delivery Within 5 Days",
       "Brand Identity Guidance",
       "Editable Source Files Available"
     ]
