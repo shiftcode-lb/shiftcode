@@ -26,7 +26,7 @@ const Hero = () => {
                 <h5 className='text-primary text-lg font-medium mb-2'>Empowering Brands with Modern Web Experiences</h5>
                 <h1 className="text-primary text-3xl md:text-4xl lg:text-5xl font-bold mb-10">Crafting High-Impact Websites That Convert</h1>
                 <p className="text-primary mt-4 text-base md:text-lg">At ShiftCode, we design and build sleek, responsive websites that
-                  captivate users and drive real business results — turning your ideas into powerful digital experiences.
+                  captivate users and drive real business results—turning your ideas into powerful digital experiences.
                 </p>
                 <div className="mt-6 flex justify-center md:justify-start gap-4">
                     <a

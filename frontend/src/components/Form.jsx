@@ -67,17 +67,17 @@ const Form = () => {
             <div className="flex flex-col md:flex-row items-center gap-8 w-full">
                 <div className="w-full">
                     <label className="text-black/70" htmlFor="name">Your Name</label>
-                    <input name='name' className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor" value={form.name} onChange={handleChange} type="text" required placeholder='Enter your full name'/>
+                    <input id='name' name='name' className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor" value={form.name} onChange={handleChange} type="text" required placeholder='Enter your full name'/>
                 </div>
                 <div className="w-full">
-                    <label className="text-black/70" htmlFor="email">Your Email</label>
-                    <input name='email' className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor" value={form.email} onChange={handleChange} type="email" required placeholder='example@email.com'/>
+                    <label className="text-black/70" htmlFor="email" >Your Email</label>
+                    <input id='email' name='email' className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor" value={form.email} onChange={handleChange} type="email" required placeholder='example@email.com'/>
                 </div>
             </div>
         
             <div className="mt-6 w-full">
                 <label className="text-black/70" htmlFor="message">Message</label>
-                <textarea name='message' className="w-full mt-2 p-2 h-40 border border-gray-500/30 rounded resize-none outline-none focus:border-borderColor" value={form.message} onChange={handleChange} required placeholder='Share Your Thoughts, Project Ideas and Question...'></textarea>
+                <textarea id='message' name='message' className="w-full mt-2 p-2 h-40 border border-gray-500/30 rounded resize-none outline-none focus:border-borderColor" value={form.message} onChange={handleChange} required placeholder='Share Your Thoughts, Project Ideas and Question...'></textarea>
             </div>
         
              <button

@@ -24,9 +24,9 @@ import animate4 from "./images/animated-icons/animate4.png"
 import animate5 from "./images/animated-icons/animate5.png"
 
 const section1_text1 = "Whether you're starting from scratch or refreshing your brand, we bring your digital vision to life. From high-performance websites to captivating designs, our team is here to make it happen.";
-const section1_text2 = "We don’t just build websites — we ensure your project is scalable, secure, and ready for real-world users.";
+const section1_text2 = "We don’t just build websites—we ensure your project is scalable, secure, and ready for real-world users.";
 
-const section2_text1 = "We offer secure hosting, regular maintenance, and hands-on support to keep your digital presence fast, stable, and safe — long after launch day.";
+const section2_text1 = "We offer secure hosting, regular maintenance, and hands-on support to keep your digital presence fast, stable, and safe—long after launch day.";
 const section2_text2 = "Stay online, stay fast, and stay secure with our ongoing support and reliable infrastructure.";
 
 export const assets = {
