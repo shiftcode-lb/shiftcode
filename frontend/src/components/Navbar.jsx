@@ -64,9 +64,14 @@ useEffect(() => {
       key={index}
       onClick={() => {
         setOpen(false);
-        const section = document.getElementById(link.path.replace('#', ''));
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
+        if (link.name === "Home") {
+          // Scroll to top of the page smoothly
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const section = document.getElementById(link.path.replace('#', ''));
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
         }
       }}
       className="your-styles cursor-pointer bg-transparent border-none outline-none"
@@ -75,6 +80,7 @@ useEffect(() => {
     </button>
   );
 })}
+
         </div>
         
         <button className='sm:hidden cursor-pointer'> 

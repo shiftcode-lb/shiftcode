@@ -29,13 +29,18 @@ const Hero = () => {
                   captivate users and drive real business results—turning your ideas into powerful digital experiences.
                 </p>
                 <div className="mt-6 flex justify-center md:justify-start gap-4">
-                    <a
-  href="#dicover-more"
+                    <button
+  onClick={() => {
+    const section = document.getElementById('dicover-more');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }}
   className="px-6 py-3 bg-primary text-background rounded font-semibold transition-transform duration-300
-  ease-in-out hover:-translate-y-1 hover:bg-coprimary"
+             ease-in-out hover:-translate-y-1 hover:bg-coprimary cursor-pointer"
 >
   Discover More
-</a>
+</button>
                 </div>
             </div>
         </div>

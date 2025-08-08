@@ -29,9 +29,18 @@ const PricingCard = ({image, title, price, features, subtitle }) => {
                   </li>
                 ))}
               </ul>
-              <a href="#contact-us" className=" hover:bg-primary/50 bg-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center
-              text-background hover:text-background duration-300
-              ">Get started</a>
+              <button
+  onClick={() => {
+    const section = document.getElementById('contact-us');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }}
+  className="hover:bg-primary/50 bg-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center
+             text-background hover:text-background duration-300 cursor-pointer"
+>
+  Get started
+</button>
     </div>
   )
 }
