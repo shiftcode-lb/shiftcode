@@ -29,7 +29,7 @@ const cardsData = [
     title: "Portfolio Website",
     subtitle: "Showcase your skills with a modern touch",
     image: assets.pricing_image,
-    price: "200",
+    price: "150",
     features: [
       "Responsive Layout & Deployment",
       "Pre-built UI with Minor Edits",
