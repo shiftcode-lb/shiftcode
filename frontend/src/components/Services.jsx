@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Title from './Title';
 import Card from './Card';
+import { assets } from '../assets/assests';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -41,6 +42,14 @@ const Services = () => {
     return () => observer.disconnect();
   }, [services]); // wait until services are loaded
 
+  const ServicesImage = {
+    "Web Development": assets.coding,
+    "UI/UX design": assets.ui,
+    "Penetration Testing": assets.testing,
+    "Localization": assets.translation,
+    "Hosting":  assets.hosting,
+    "Integration and Maintenance": assets.maintainance
+  }
   return (
     <div
       className="flex flex-col justify-center items-center w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl"
@@ -58,7 +67,7 @@ const Services = () => {
             key={index}
             cardTitle={service.name}
             cardText={service.description}
-            cardImage={service.image}
+            cardImage={ServicesImage[service.name]}
           />
         ))}
       </div>
@@ -85,7 +94,7 @@ const Services = () => {
               <Card
                 cardTitle={service.name}
                 cardText={service.description}
-                cardImage={service.image}
+                cardImage={ServicesImage[service.name]}
               />
             </SwiperSlide>
           ))}
