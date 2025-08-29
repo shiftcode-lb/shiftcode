@@ -12,7 +12,7 @@ const Statics = () => {
 useEffect(() =>{
       const loadData = async ()=>{
         const data = await fetchTeam();
-        setTeamMembers(data.teamMembers);
+        setTeamMembers(data.teamCount);
       };
       loadData();
     },[]);
@@ -20,7 +20,7 @@ useEffect(() =>{
     useEffect (() => {
       const loadData = async () =>{
         const data = await fetchProjects();
-        setProjects(data.projects);
+        setProjects(data.projectCount);
       };
       loadData();
     },[])
@@ -30,7 +30,7 @@ useEffect(() =>{
      
       <CardSmall 
       cardImage={assets.samll_card1}
-      cardNumber= {projects.length}
+      cardNumber= {projects}
       tag="+"
       cardTitle="Client Project"
       />
@@ -46,7 +46,7 @@ useEffect(() =>{
       />
       <CardSmall 
       cardImage={assets.samll_card4}
-      cardNumber= {teamMembers.length}
+      cardNumber= {teamMembers}
       tag="+" 
       cardTitle="Team Members"
       />

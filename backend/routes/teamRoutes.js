@@ -8,4 +8,6 @@ router.get('/', teamController.getTeam)
 
 router.get('/:id', teamController.getTeamMember)
 
+router.get('/count', teamController.countMembers)
+
 module.exports = router

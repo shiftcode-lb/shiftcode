@@ -51,3 +51,12 @@ exports.getProject = async (req, res)=>{
         return res.status(500).json({message:e.message})
     }
 }
+
+exports.countProjects = async (req, res) => {
+    try {
+    const projectCount = await projectModel.countDocuments();
+    return res.status(200).json({ projectCount });
+  } catch (e) {
+    return res.status(500).json({ message: e.message });
+  }
+}

@@ -66,3 +66,12 @@ exports.getTeamMember = async (req, res)=>{
         return res.status(500).json({message: e.message})
     }
 }
+
+exports.countMembers = async (req, res) => {
+    try {
+    const teamCount = await teamModel.countDocuments();
+    return res.status(200).json({ teamCount });
+  } catch (e) {
+    return res.status(500).json({ message: e.message });
+  }
+}
