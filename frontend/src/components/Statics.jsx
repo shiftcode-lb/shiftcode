@@ -2,20 +2,22 @@ import React,{use, useEffect, useState} from 'react'
 import CardSmall from './CardSmall'
 import { assets } from '../assets/assests'
 import { fetchTeam } from '../services/teamServices';
-import { fetchProjects } from '../services/projectServices';
+import { fetchProjects, teamCount } from '../services/projectServices';
 
 
 const Statics = () => {
 
-  const [teamMembers, setTeamMembers] = useState(0);
   const [projects, setProjects] = useState(0);
-useEffect(() =>{
-      const loadData = async ()=>{
-        const data = await fetchTeam();
-        setTeamMembers(data.teamCount);
-      };
-      loadData();
-    },[]);
+  const [teamCount, setTeamCount] = useState(0);
+
+
+  useEffect(()=>{
+    const loadData = async ()=>{
+      const data = await teamCount();
+      setTeamCount(data.teamCount)
+    };
+    loadData();
+  }, [])
 
     useEffect (() => {
       const loadData = async () =>{
@@ -24,6 +26,7 @@ useEffect(() =>{
       };
       loadData();
     },[])
+
   return (
     <div className=' relative flex flex-col md:flex-row justify-between items-center mt-10 gap-6 my-10
     w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'>
@@ -46,7 +49,7 @@ useEffect(() =>{
       />
       <CardSmall 
       cardImage={assets.samll_card4}
-      cardNumber= {teamMembers}
+      cardNumber= {teamCount}
       tag="+" 
       cardTitle="Team Members"
       />
