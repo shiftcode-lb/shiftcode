@@ -53,8 +53,9 @@ exports.getProject = async (req, res)=>{
 }
 
 exports.countProjects = async (req, res) => {
-    try {
-    const projectCount = await projectModel.countDocuments();
+  try {
+    const project = await projectModel.find(); // MongoDB does counting directly
+    projectCount = project.length;
     return res.status(200).json({ projectCount });
   } catch (e) {
     return res.status(500).json({ message: e.message });
