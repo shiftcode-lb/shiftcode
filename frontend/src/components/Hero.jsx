@@ -17,8 +17,8 @@ const Hero = () => {
     });
   }, []);
   return (
-    <div className='flex flex-col gap-10 justify-center  md:flex-row items-center h-[100vh] relative
-    w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl my-10'>
+    <div className='flex flex-col gap-10 justify-center  md:flex-row items-center min-h-[90vh] relative
+    w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl pt-20'>
       
         {/** Left Side Section */}
         <div className='w-full md:w-1/2  text-center md:text-left' data-aos="fade-up">
@@ -26,16 +26,21 @@ const Hero = () => {
                 <h5 className='text-primary text-lg font-medium mb-2'>Empowering Brands with Modern Web Experiences</h5>
                 <h1 className="text-primary text-3xl md:text-4xl lg:text-5xl font-bold mb-10">Crafting High-Impact Websites That Convert</h1>
                 <p className="text-primary mt-4 text-base md:text-lg">At ShiftCode, we design and build sleek, responsive websites that
-                  captivate users and drive real business results — turning your ideas into powerful digital experiences.
+                  captivate users and drive real business results—turning your ideas into powerful digital experiences.
                 </p>
                 <div className="mt-6 flex justify-center md:justify-start gap-4">
-                    <a
-  href="#dicover-more"
+                    <button
+  onClick={() => {
+    const section = document.getElementById('dicover-more');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }}
   className="px-6 py-3 bg-primary text-background rounded font-semibold transition-transform duration-300
-  ease-in-out hover:-translate-y-1 hover:bg-coprimary"
+             ease-in-out hover:-translate-y-1 hover:bg-coprimary cursor-pointer"
 >
   Discover More
-</a>
+</button>
                 </div>
             </div>
         </div>

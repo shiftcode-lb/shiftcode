@@ -22,11 +22,21 @@ import animate2 from "./images/animated-icons/animate2.png"
 import animate3 from "./images/animated-icons/animate3.png"
 import animate4 from "./images/animated-icons/animate4.png"
 import animate5 from "./images/animated-icons/animate5.png"
+import coding from "./images/services/coding.png"
+import hosting from "./images/services/hosting.png"
+import maintainance from "./images/services/maintainance.png"
+import testing from "./images/services/testing.png"
+import translation from "./images/services/translation.png"
+import ui from "./images/services/ui-ux.png"
+import ali from "./images/team-members/ali-profile.jpeg"
+import mhmd from "./images/team-members/MAK-profile.png"
+import elham from "./images/team-members/MAK-profile.png"
+import batol from "./images/team-members/batoul.jpeg"
 
 const section1_text1 = "Whether you're starting from scratch or refreshing your brand, we bring your digital vision to life. From high-performance websites to captivating designs, our team is here to make it happen.";
-const section1_text2 = "We don’t just build websites — we ensure your project is scalable, secure, and ready for real-world users.";
+const section1_text2 = "We don’t just build websites—we ensure your project is scalable, secure, and ready for real-world users.";
 
-const section2_text1 = "We offer secure hosting, regular maintenance, and hands-on support to keep your digital presence fast, stable, and safe — long after launch day.";
+const section2_text1 = "We offer secure hosting, regular maintenance, and hands-on support to keep your digital presence fast, stable, and safe—long after launch day.";
 const section2_text2 = "Stay online, stay fast, and stay secure with our ongoing support and reliable infrastructure.";
 
 export const assets = {
@@ -57,7 +67,17 @@ export const assets = {
     animate2,
     animate3,
     animate4,
-    animate5
+    animate5,
+    coding,
+    translation,
+    ui,
+    testing,
+    maintainance,
+    hosting,
+    ali,
+    mhmd,
+    elham,
+    batol
 }
 
 

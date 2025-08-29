@@ -1,10 +1,12 @@
-import {React, useEffect, useState} from 'react'
-import Title from './Title'
+import React, { useEffect, useState } from 'react';
+import Title from './Title';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { assets } from '../assets/assests';
 
 import axiosInstance from '../services/axiosInstance';
+import SuccessAlert from './SuccessAlert';
+import ErrorAlert from './ErrorAlert';
 
 const Form = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -12,26 +14,25 @@ const Form = () => {
   const [responseMsg, setResponseMsg] = useState('');
   const [responseType, setResponseType] = useState('');
 
+  useEffect(() => {
+    if (responseMsg) {
+      const timer = setTimeout(() => {
+        setResponseMsg('');
+        setResponseType('');
+      }, 50000); // Clear message after 10 seconds
 
-    useEffect(() => {
-  if (responseMsg) {
-    const timer = setTimeout(() => {
-      setResponseMsg('');
-      setResponseType('');
-    }, 10000); // 10 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [responseMsg]);
 
-    return () => clearTimeout(timer); // clear on unmount or re-render
-  }
-}, [responseMsg]);
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
 
-
-    useEffect(() => {
-        AOS.init({
-          duration: 1000,
-          once: false, // animate every time element enters the viewport
-        });
-      }, []);
-      const handleChange = (e) => {
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -39,68 +40,118 @@ const Form = () => {
     e.preventDefault();
     setLoading(true);
     setResponseMsg('');
+    setResponseType('');
 
     try {
       const { data } = await axiosInstance.post('/mail', form);
       setResponseMsg(data.message || 'Message sent successfully!');
-      setForm({ name: '', email: '', message: '' });
       setResponseType('success');
+      setForm({ name: '', email: '', message: '' });
     } catch (err) {
       console.error('Error sending message:', err);
       setResponseMsg(err.response?.data?.message || 'Something went wrong.');
+      setResponseType('error');
     } finally {
       setLoading(false);
     }
   };
+
   return (
-    <div className='relative w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl mb-10' id='contact-us'>
+    <div
+      className="relative w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl mb-10"
+      id="contact-us"
+    >
       <img
         src={assets.bg_image3}
         alt=""
-        className=" absolute left-[-250px] top-1/2 -translate-y-1/2 w-[300px] opacity-20 pointer-events-none select-none"
+        className="absolute left-[-250px] top-1/2 -translate-y-1/2 w-[300px] opacity-20 pointer-events-none select-none"
       />
-      <Title 
-            title="Contact Us Here"
-            subtitle="Share your ideas, and let’s build something great together."
-            />
-      <form className="flex flex-col items-center text-sm my-10" data-aos="fade-up" data-aos-delay="300" onSubmit={handleSubmit}>
-            <div className="flex flex-col md:flex-row items-center gap-8 w-full">
-                <div className="w-full">
-                    <label className="text-black/70" htmlFor="name">Your Name</label>
-                    <input name='name' className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor" value={form.name} onChange={handleChange} type="text" required placeholder='Enter your full name'/>
-                </div>
-                <div className="w-full">
-                    <label className="text-black/70" htmlFor="email">Your Email</label>
-                    <input name='email' className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor" value={form.email} onChange={handleChange} type="email" required placeholder='example@email.com'/>
-                </div>
-            </div>
-        
-            <div className="mt-6 w-full">
-                <label className="text-black/70" htmlFor="message">Message</label>
-                <textarea name='message' className="w-full mt-2 p-2 h-40 border border-gray-500/30 rounded resize-none outline-none focus:border-borderColor" value={form.message} onChange={handleChange} required placeholder='Share Your Thoughts, Project Ideas and Question...'></textarea>
-            </div>
-        
-             <button
-        type="submit"
-        disabled={loading}
-        className="cursor-pointer mt-5 bg-primary hover:bg-coprimary text-background h-12 w-56 px-4 rounded active:scale-95 transition"
-      >
-        {loading ? 'Sending...' : 'Send Message'}
-      </button>
+      <Title
+        title="Contact Us Here"
+        subtitle="Share your ideas, and let’s build something great together."
+      />
 
-      {responseMsg && (
-  <p
-    className={`mt-4 text-center ${
-      responseType === 'success' ? 'text-green-600' : 'text-red-600'
-    }`}
-  >
-    {responseMsg}
-  </p>
+      <form
+        className="flex flex-col items-center text-sm my-10"
+        data-aos="fade-up"
+        data-aos-delay="300"
+        onSubmit={handleSubmit}
+      >
+        <div className="flex flex-col md:flex-row items-center gap-8 w-full">
+          <div className="w-full">
+            <label className="text-black/70" htmlFor="name">
+              Your Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor"
+              value={form.name}
+              onChange={handleChange}
+              type="text"
+              required
+              placeholder="Enter your full name"
+            />
+          </div>
+          <div className="w-full">
+            <label className="text-black/70" htmlFor="email">
+              Your Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              className="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-borderColor"
+              value={form.email}
+              onChange={handleChange}
+              type="email"
+              required
+              placeholder="example@email.com"
+            />
+          </div>
+        </div>
+
+        <div className="mt-6 w-full">
+          <label className="text-black/70" htmlFor="message">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            className="w-full mt-2 p-2 h-40 border border-gray-500/30 rounded resize-none outline-none focus:border-borderColor"
+            value={form.message}
+            onChange={handleChange}
+            required
+            placeholder="Share Your Thoughts, Project Ideas and Question..."
+          />
+        </div>
+
+        <button
+  type="submit"
+  disabled={loading}
+  className="cursor-pointer mt-5 bg-primary hover:bg-coprimary text-background h-12 w-56 px-4 rounded active:scale-95 transition"
+>
+  {loading ? 'Sending...' : 'Send Message'}
+</button>
+
+{/* Alerts shown directly under the button */}
+{responseType === 'success' && responseMsg && (
+  <div className="mt-3 w-full max-w-md flex justify-center ">
+    <SuccessAlert
+      title="Message sent successfully!"
+      message={responseMsg}
+      onClose={() => setResponseMsg('')}
+    />
+  </div>
 )}
 
-        </form>
-        </div>
-  )
-}
+{responseType === 'error' && responseMsg && (
+  <div className="mt-3 w-full max-w-md flex justify-center">
+    <ErrorAlert message={responseMsg} onClose={() => setResponseMsg('')} />
+  </div>
+)}
+      </form>
+    </div>
+  );
+};
 
-export default Form
+export default Form;

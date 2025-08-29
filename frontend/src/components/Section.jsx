@@ -31,13 +31,18 @@ const Section = ({Title, image, text, text2, flex}) => {
                         <br />
                         <p className='text-[18px] text-primary font-normal leading-relaxed mb-[31px]'>{text2}</p>
                         <div className="mt-5">
-                            <a
-  href="#contact-us"
+                            <button
+  onClick={() => {
+    const section = document.getElementById('contact-us');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }}
   className="inline-block px-6 py-3 text-background rounded bg-primary hover:bg-coprimary
-  transform hover:-translate-y-1 transition-transform duration-300"
+  transform hover:-translate-y-1 transition-transform duration-300 cursor-pointer" 
 >
   Contact Us
-</a>
+</button>
                         </div>
       </div>
       {/** Right banner */}

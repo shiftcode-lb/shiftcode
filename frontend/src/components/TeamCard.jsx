@@ -22,7 +22,7 @@ const TeamCard = ({name, position, description, socialLinks, image, email}) => {
   )
 };
  return (
-    <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer bg-coprimary
+    <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border bg-coprimary
     rounded-xl hover:border-transparent group hover:bg-primary dark:border-gray-700 dark:hover:border-transparent" data-aos="fade-up" data-aos-delay="300">
       <img
         className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
@@ -30,11 +30,11 @@ const TeamCard = ({name, position, description, socialLinks, image, email}) => {
         alt={`${name} picture`}
       />
 
-      <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+      <h1 className="mt-4 text-2xl font-semibold text-background capitalizetext-background">
         {name}
       </h1>
 
-      <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+      <p className="mt-2 capitalize text-background">
         {position}
       </p>
 
@@ -48,7 +48,7 @@ const TeamCard = ({name, position, description, socialLinks, image, email}) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={platform}
-                className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                className="mx-2 text-background cursor-pointer"
               >
                 {socialIcons[platform]}
               </a>

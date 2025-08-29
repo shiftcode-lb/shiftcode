@@ -59,29 +59,28 @@ useEffect(() => {
         sm:items-center gap-4 sm:gap-8 max-sm:p-4 transition-all duration-300 z-50 mt-6 sm:mt-0
         ${open ? "max-sm:translate-x-0 bg-background" : "max-sm:translate-x-full"}`}>
             {menuLinks.map((link, index) => {
-  if (link.name === "Home") {
-    return (
-      <a
-        key={index}
-        href="#top"
-        onClick={() => setOpen(false)}
-        className="your-styles cursor-pointer"
-      >
-        {link.name}
-      </a>
-    );
-  }
   return (
-    <a
+    <button
       key={index}
-      href={link.path}
-      onClick={() => setOpen(false)}
-      className="your-styles cursor-pointer"
+      onClick={() => {
+        setOpen(false);
+        if (link.name === "Home") {
+          // Scroll to top of the page smoothly
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const section = document.getElementById(link.path.replace('#', ''));
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }}
+      className="your-styles cursor-pointer bg-transparent border-none outline-none"
     >
       {link.name}
-    </a>
+    </button>
   );
 })}
+
         </div>
         
         <button className='sm:hidden cursor-pointer'> 
