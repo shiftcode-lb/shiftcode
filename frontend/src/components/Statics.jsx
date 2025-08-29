@@ -7,8 +7,8 @@ import { fetchProjects } from '../services/projectServices';
 
 const Statics = () => {
 
-  const [teamMembers, setTeamMembers] = useState([]);
-  const [projects, setProjects] = useState([]);
+  const [teamMembers, setTeamMembers] = useState(0);
+  const [projects, setProjects] = useState(0);
 useEffect(() =>{
       const loadData = async ()=>{
         const data = await fetchTeam();
