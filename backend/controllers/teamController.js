@@ -69,7 +69,7 @@ exports.getTeamMember = async (req, res)=>{
 
 exports.countMembers = async (req, res) => {
     try {
-    const team = await teamModel.finde();
+    const team = await teamModel.find();
     teamCount = team.length;
     return res.status(200).json({ teamCount });
   } catch (e) {
