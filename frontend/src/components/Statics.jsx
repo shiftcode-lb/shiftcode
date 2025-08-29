@@ -1,8 +1,8 @@
 import React,{use, useEffect, useState} from 'react'
 import CardSmall from './CardSmall'
 import { assets } from '../assets/assests'
-import { fetchTeam } from '../services/teamServices';
-import { fetchProjects, teamCount } from '../services/projectServices';
+import { fetchTeamCount } from '../services/teamServices';
+import { fetchProjects } from '../services/projectServices';
 
 
 const Statics = () => {
@@ -13,7 +13,7 @@ const Statics = () => {
 
   useEffect(()=>{
     const loadData = async ()=>{
-      const data = await teamCount();
+      const data = await fetchTeamCount();
       setTeamCount(data.teamCount)
     };
     loadData();

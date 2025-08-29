@@ -10,7 +10,7 @@ export const fetchTeam = async () =>{
     }
 }
 
-export const teamCount = async () => {
+export const fetchTeamCount = async () => {
     try{
         const res = await axiosInstance.get('/team/count');
         return res.data;
