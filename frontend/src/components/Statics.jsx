@@ -1,7 +1,7 @@
 import React,{use, useEffect, useState} from 'react'
 import CardSmall from './CardSmall'
 import { assets } from '../assets/assests'
-import { fetchTeamCount } from '../services/teamServices';
+import { fetchTeamCount, fetchTeam } from '../services/teamServices';
 import { fetchProjects } from '../services/projectServices';
 
 
