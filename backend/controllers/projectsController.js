@@ -56,6 +56,7 @@ exports.countProjects = async (req, res) => {
   try {
     const project = await projectModel.find();
     const projectCount = project.length;
+    console.log(projectCount)
     return res.status(200).json({ projectCount });
   } catch (e) {
     return res.status(500).json({ message: e.message });
