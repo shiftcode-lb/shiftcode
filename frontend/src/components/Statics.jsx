@@ -7,25 +7,25 @@ import { fetchProjects } from '../services/projectServices';
 
 const Statics = () => {
 
-  const [projects, setProjects] = useState(0);
-  const [teamCount, setTeamCount] = useState(0);
+  // const [projects, setProjects] = useState(0);
+  // const [teamCount, setTeamCount] = useState(0);
 
 
-  useEffect(()=>{
-    const loadData = async ()=>{
-      const data = await fetchTeamCount();
-      setTeamCount(data.teamCount)
-    };
-    loadData();
-  }, [])
+  // useEffect(()=>{
+  //   const loadData = async ()=>{
+  //     const data = await fetchTeamCount();
+  //     setTeamCount(data.teamCount)
+  //   };
+  //   loadData();
+  // }, [])
 
-    useEffect (() => {
-      const loadData = async () =>{
-        const data = await fetchProjects();
-        setProjects(data.projectCount);
-      };
-      loadData();
-    },[])
+  //   useEffect (() => {
+  //     const loadData = async () =>{
+  //       const data = await fetchProjects();
+  //       setProjects(data.projectCount);
+  //     };
+  //     loadData();
+  //   },[])
 
   return (
     <div className=' relative flex flex-col md:flex-row justify-between items-center mt-10 gap-6 my-10
@@ -33,7 +33,7 @@ const Statics = () => {
      
       <CardSmall 
       cardImage={assets.samll_card1}
-      cardNumber= {projects}
+      cardNumber= "2"
       tag="+"
       cardTitle="Client Project"
       />
@@ -49,7 +49,7 @@ const Statics = () => {
       />
       <CardSmall 
       cardImage={assets.samll_card4}
-      cardNumber= {teamCount}
+      cardNumber= "4"
       tag="+" 
       cardTitle="Team Members"
       />
