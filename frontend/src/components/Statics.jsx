@@ -1,8 +1,8 @@
-import React,{use, useEffect, useState} from 'react'
+import React from 'react'
 import CardSmall from './CardSmall'
 import { assets } from '../assets/assests'
-import { fetchTeamCount, fetchTeam } from '../services/teamServices';
-import { fetchProjects } from '../services/projectServices';
+// import { fetchTeamCount, fetchTeam } from '../services/teamServices';
+// import { fetchProjects } from '../services/projectServices';
 
 
 const Statics = () => {
