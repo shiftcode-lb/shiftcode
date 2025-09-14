@@ -1,14 +1,17 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import CardSmall from './CardSmall'
 import { assets } from '../assets/assests'
 // import { fetchTeamCount, fetchTeam } from '../services/teamServices';
 // import { fetchProjects } from '../services/projectServices';
+import axios from 'axios';
+const baseURL = import.meta.env.VITE_API_URL;
+
 
 
 const Statics = () => {
 
-  // const [projects, setProjects] = useState(0);
-  // const [teamCount, setTeamCount] = useState(0);
+  const [projects, setProjects] = useState(0);
+  const [teamCount, setTeamCount] = useState(0);
 
 
   // useEffect(()=>{
@@ -27,13 +30,24 @@ const Statics = () => {
   //     loadData();
   //   },[])
 
+  useEffect(()=>{
+    const loadData = async ()=>{
+      const response = await axios.get(`${baseURL}/projects/count`)
+      setProjects(response.data.projectCount)
+
+      const response2 = await axios.get(`${baseURL}/team/count`)
+      setTeamCount(response2.data.teamCount)
+    };
+    loadData();
+  }, [])
+
   return (
     <div className=' relative flex flex-col md:flex-row justify-between items-center mt-10 gap-6 my-10
     w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl'>
      
       <CardSmall 
       cardImage={assets.samll_card1}
-      cardNumber= "2"
+      cardNumber= {projects}
       tag="+"
       cardTitle="Client Project"
       />
@@ -49,7 +63,7 @@ const Statics = () => {
       />
       <CardSmall 
       cardImage={assets.samll_card4}
-      cardNumber= "4"
+      cardNumber= {teamCount}
       tag="+" 
       cardTitle="Team Members"
       />
