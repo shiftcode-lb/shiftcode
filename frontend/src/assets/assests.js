@@ -30,7 +30,7 @@ import translation from "./images/services/translation.png"
 import ui from "./images/services/ui-ux.png"
 import ali from "./images/team-members/ali-profile.jpeg"
 import mhmd from "./images/team-members/MAK-profile.png"
-import elham from "./images/team-members/elham-profile.png"
+import elham from "./images/team-members/Elham-profile.png"
 import batol from "./images/team-members/batoul.jpeg"
 
 const section1_text1 = "Whether you're starting from scratch or refreshing your brand, we bring your digital vision to life. From high-performance websites to captivating designs, our team is here to make it happen.";
