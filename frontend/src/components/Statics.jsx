@@ -1,10 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import CardSmall from './CardSmall'
 import { assets } from '../assets/assests'
-import axios from 'axios';
-const baseURL = import.meta.env.VITE_API_URL;
-
-
 
 const Statics = () => {
 

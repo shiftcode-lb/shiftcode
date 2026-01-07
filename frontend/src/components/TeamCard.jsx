@@ -3,11 +3,11 @@ import {React, useEffect} from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const TeamCard = ({name, position, description, socialLinks, image, email}) => {
+const TeamCard = ({name, position, socialLinks, image}) => {
     useEffect(() => {
         AOS.init({
           duration: 1000,
-          once: false, // animate every time element enters the viewport
+          once: false, 
         });
       }, []);
       const socialIcons = {

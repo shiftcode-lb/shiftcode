@@ -3,7 +3,6 @@ import Title from './Title';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { assets } from '../assets/assests';
-
 import axiosInstance from '../services/axiosInstance';
 import SuccessAlert from './SuccessAlert';
 import ErrorAlert from './ErrorAlert';
@@ -19,7 +18,7 @@ const Form = () => {
       const timer = setTimeout(() => {
         setResponseMsg('');
         setResponseType('');
-      }, 50000); // Clear message after 10 seconds
+      }, 50000);
 
       return () => clearTimeout(timer);
     }
