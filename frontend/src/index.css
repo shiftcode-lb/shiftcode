@@ -14,14 +14,6 @@ h1, h2, h3, h4, h5, h6{
   font-family: "JetBrains Mono", monospace;
 }
 
-#services,
-#team,
-#projects,
-#dicover-more,
-#contact-us {
-  scroll-margin-top: 80px;
-}
-
 @theme{
   /* Core surfaces */
   --color-background: #060a14;   /* deep space navy - page background & "ink" text on green */
@@ -56,9 +48,6 @@ h1, h2, h3, h4, h5, h6{
 
 html {
   scroll-behavior: smooth;
-
-  /* 72px navbar + 16px visual spacing */
-  scroll-padding-top: 80px;
 }
 
 body{

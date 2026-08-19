@@ -124,11 +124,11 @@ const Team = () => {
       <div className="flex flex-col md:flex-row gap-10 md:gap-16 mt-6 items-start">
         {/* Text + controls */}
         <div
-          className={`w-full h-full md:w-1/2 order-2 md:order-1 transition-all duration-500 ease-out ${
-            animate
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-4'
-          }`}
+          className={`w-full md:w-1/2 min-h-101.5 order-2 md:order-1 flex flex-col transition-all duration-500 ease-out ${
+                  animate
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-4'
+                  }`}
         >
           <h3 className="text-text text-3xl sm:text-4xl md:text-5xl font-bold break-words">
             {member.name}
