@@ -99,7 +99,7 @@ const Hero = () => {
             bg-primary
             text-background
             font-semibold
-            hover:bg-light
+            hover:bg-[#1b9e4b]
             hover:-translate-y-1
             transition-all
             duration-300
@@ -122,7 +122,8 @@ const Hero = () => {
             bg-coprimary/60
             text-primary
             font-semibold
-            hover:bg-light
+            hover:bg-coprimary
+            hover: text-primary
             hover:-translate-y-1
             transition-all
             duration-300

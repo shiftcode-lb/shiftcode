@@ -9,7 +9,7 @@ const AUTO_ADVANCE_MS = 5000;
 const team = [
   {
     name: "Mohamad Kassem",
-    position: "Co-Founder | Cybersecurity & Web Development",
+    position: "Co-Founder | Cybersecurity Specialist & Software Developer",
     bio: "Cybersecurity researcher, penetration tester, and web developer focused on building secure, scalable applications and identifying vulnerabilities before they become threats.",
     photo: assets.mak,
     links: {
@@ -29,7 +29,7 @@ const team = [
   },
   {
     name: "Roaa El-Mir",
-    position: "Co-Founder | AI & Web Development",
+    position: "Co-Founder | AI & Software Engineer",
     bio: "AI and web developer focused on building intelligent applications, integrating machine learning solutions, and developing modern, scalable web platforms.",
     photo: assets.roaa,
     links: {
@@ -112,7 +112,6 @@ const Team = () => {
   return (
     <section
       id="team"
-      data-aos="fade-up"
       className="relative flex flex-col section-x section-pt mb-20 md:mb-28"
     >
       <span className="font-mono-code text-primary text-sm tracking-[3px] uppercase">

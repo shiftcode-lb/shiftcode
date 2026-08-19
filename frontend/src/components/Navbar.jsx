@@ -37,12 +37,23 @@ const Navbar = () => {
 
     const section = document.getElementById(link.path.replace('#', ''));
 
+    // if (section) {
+    //   section.scrollIntoView({
+    //     behavior: 'smooth',
+    //     block: 'start',
+    //   });
+    // }
+
     if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
+    const HEADER_OFFSET = 70; // Adjust this number to match your header height
+    const elementPosition = section.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - HEADER_OFFSET;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
+  }
   };
 
   const goToContact = () => {
