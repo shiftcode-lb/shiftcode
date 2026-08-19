@@ -1,70 +1,185 @@
-import {React, useEffect} from 'react'
-import { assets } from '../assets/assests'
-import { Link } from 'react-router-dom';
-import { FaPlay } from 'react-icons/fa';
-
+import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import '../assets/css/FloatingIcons.css';
+const marqueeItems = [
+  {
+    name: 'UI/UX Design',
+    dotColor: 'bg-red-500',
+  },
+  {
+    name: 'Software Development',
+    dotColor: 'bg-blue-500',
+  },
+  {
+    name: 'Cybersecurity',
+    dotColor: 'bg-green-500',
+  },
+  {
+    name: 'Business Marketing',
+    dotColor: 'bg-yellow-500',
+  },
+  {
+    name: 'AI Solutions',
+    dotColor: 'bg-purple-500',
+  },
+  {
+    name: 'Hosting & Maintenance',
+    dotColor: 'bg-cyan-500',
+  },
+];
 
-  
 const Hero = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // default animation duration
-      once: false,     // only animate once
+      duration: 1000,
+      once: false,
     });
+
+    AOS.refresh();
   }, []);
-  return (
-    <div className='flex flex-col gap-10 justify-center  md:flex-row items-center min-h-[90vh] relative
-    w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl pt-20'>
-      
-        {/** Left Side Section */}
-        <div className='w-full md:w-1/2  text-center md:text-left' data-aos="fade-up">
-            <div>
-                <h5 className='text-primary text-lg font-medium mb-2'>Empowering Brands with Modern Web Experiences</h5>
-                <h1 className="text-primary text-3xl md:text-4xl lg:text-5xl font-bold mb-10">Crafting High-Impact Websites That Convert</h1>
-                <p className="text-primary mt-4 text-base md:text-lg">At ShiftCode, we design and build sleek, responsive websites that
-                  captivate users and drive real business results—turning your ideas into powerful digital experiences.
-                </p>
-                <div className="mt-6 flex justify-center md:justify-start gap-4">
-                    <button
-  onClick={() => {
-    const section = document.getElementById('dicover-more');
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({
+        behavior: 'smooth',
+      });
     }
-  }}
-  className="px-6 py-3 bg-primary text-background rounded font-semibold transition-transform duration-300
-             ease-in-out hover:-translate-y-1 hover:bg-coprimary cursor-pointer"
->
-  Discover More
-</button>
-                </div>
-            </div>
-        </div>
-        {/** Right Section */}
-        <div className="w-full md:w-1/2 " data-aos="fade-up">
-        <div className="relative w-full flex justify-center md:items-center">
-          <img
-            src={assets.hero_image}
-            alt="Banner"
-            className="md:w-full max-w-full banner-img-width md:h-full h-[350px] w-[350px] "/>
-        </div>
-        </div>
-        {/** Floating images */}
-        
-<div className="anim-elements overflow-hidden">
-    <img src={assets.animate1} alt="" className="anim-element" />
-    <img src={assets.animate2} alt="" className="anim-element" />
-    <img src={assets.animate3} alt="" className="anim-element" />
-    <img src={assets.animate4} alt="" className="anim-element" />
-    <img src={assets.animate5} alt="" className="anim-element" />
-  </div>
+  };
 
-    </div>
-  )
-}
+  return (
+    <section
+      id="hero"
+      className="relative w-full min-h-[92vh] flex flex-col items-center justify-center text-center section-x pt-20 pb-12 overflow-hidden"
+    >
+      {/* Small Heading */}
+      <span
+        className="font-mono-code text-muted text-sm md:text-base tracking-[4px] uppercase mb-6"
+        data-aos="fade-up"
+      >
+        Modern Web Studio
+      </span>
 
-export default Hero
+      {/* Main Heading */}
+      <h1
+        className="text-primary text-glow text-5xl md:text-7xl lg:text-[86px] font-extrabold leading-[1.05] max-w-5xl"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        Welcome to ShiftCode
+      </h1>
+
+      {/* Description */}
+      <p
+        className="text-muted mt-7 max-w-2xl text-lg md:text-xl leading-relaxed"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        We design, build, and support high-impact digital products for startups
+        and established companies — from first sketch to long-term maintenance.
+      </p>
+
+      {/* Buttons */}
+      <div
+        className="mt-9 flex flex-wrap items-center justify-center gap-4"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <button
+          type="button"
+          onClick={() => scrollToSection('contact-us')}
+          className="
+            px-7
+            py-3.5
+            rounded-2xl
+            text-md
+            border
+            bg-primary
+            text-background
+            font-semibold
+            hover:bg-light
+            hover:-translate-y-1
+            transition-all
+            duration-300
+            cursor-pointer
+          "
+        >
+          Start Project
+        </button>
+
+        <button
+          type="button"
+          onClick={() => scrollToSection('projects')}
+          className="
+            px-7
+            py-3.5
+            text-md
+            rounded-2xl
+            border-1
+            border-primary
+            bg-coprimary/60
+            text-primary
+            font-semibold
+            hover:bg-light
+            hover:-translate-y-1
+            transition-all
+            duration-300
+            cursor-pointer
+          "
+        >
+          See Our Work
+        </button>
+      </div>
+
+      {/* Marquee */}
+      <div
+        className="
+          marquee-row
+          relative
+          w-full
+          max-w-4xl
+          mt-10
+          overflow-hidden
+          opacity-100
+          visible
+          [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]
+        "
+      >
+        <div className="marquee-track">
+          {[...marqueeItems, ...marqueeItems].map((item, index) => (
+            <span
+              key={`${item.name}-${index}`}
+              className="
+                flex
+                items-center
+                gap-3
+                shrink-0
+                px-6
+                py-3
+                mr-3
+                rounded-full
+                border
+                border-borderColor
+                bg-coprimary
+                text-muted
+                text-base
+                font-mono-code
+                whitespace-nowrap
+              "
+            >
+              <span
+                className={`w-2 h-2 rounded-full shrink-0 ${item.dotColor}`}
+              />
+
+              {item.name}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

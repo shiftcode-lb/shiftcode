@@ -35,6 +35,10 @@
   opacity: 0.8;
 }
 
+.anim-tint {
+  filter: invert(63%) sepia(56%) saturate(647%) hue-rotate(74deg) brightness(103%) contrast(96%);
+}
+
 .anim-element:nth-child(1) {
   top: 12%;
   left: 10%;

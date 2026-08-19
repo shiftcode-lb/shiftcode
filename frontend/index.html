@@ -2,9 +2,81 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/*" href="src/assets/images/meta-logo.png" />
+
+    <!--
+      IMPORTANT: replace https://www.shiftcode.dev everywhere in this file
+      (and in src/components/StructuredData.jsx) with the real production
+      domain once the site is deployed. Canonical/OG/Twitter/JSON-LD URLs
+      all depend on it being correct.
+    -->
+
+    <title>ShiftCode — Web Development, UI/UX Design & Cybersecurity Studio</title>
+    <meta name="description" content="ShiftCode is a modern web studio building high-impact websites, UI/UX design, cybersecurity, localization, and hosting solutions for startups and established companies." />
+    <meta name="keywords" content="ShiftCode, web development, UI/UX design, cybersecurity, web hosting, localization, software agency, web studio" />
+    <meta name="author" content="ShiftCode" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#060a14" />
+    <link rel="canonical" href="https://www.shiftcode.dev/" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ShiftCode</title>
+
+    <!-- Favicons / app icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ShiftCode" />
+    <meta property="og:title" content="ShiftCode — Web Development, UI/UX Design & Cybersecurity Studio" />
+    <meta property="og:description" content="ShiftCode is a modern web studio building high-impact websites, UI/UX design, cybersecurity, localization, and hosting solutions for startups and established companies." />
+    <meta property="og:url" content="https://www.shiftcode.dev/" />
+    <meta property="og:image" content="https://www.shiftcode.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ShiftCode — Web Development, UI/UX Design & Cybersecurity Studio" />
+    <meta name="twitter:description" content="Modern web studio building high-impact websites, UI/UX design, cybersecurity, localization, and hosting for startups and established companies." />
+    <meta name="twitter:image" content="https://www.shiftcode.dev/og-image.png" />
+
+    <!-- Font preconnects for faster first paint -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Static Organization + WebSite structured data (present even before JS hydrates) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.shiftcode.dev/#organization",
+      "name": "ShiftCode",
+      "url": "https://www.shiftcode.dev/",
+      "logo": "https://www.shiftcode.dev/apple-touch-icon.png",
+      "image": "https://www.shiftcode.dev/og-image.png",
+      "description": "ShiftCode is a modern web studio building high-impact websites, UI/UX design, cybersecurity, localization, and hosting solutions for startups and established companies.",
+      "email": "shiftcode.lb@gmail.com",
+      "sameAs": [
+        "https://www.instagram.com/shiftcode_/",
+        "https://github.com/shiftcode-lb"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.shiftcode.dev/#website",
+      "url": "https://www.shiftcode.dev/",
+      "name": "ShiftCode",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://www.shiftcode.dev/#organization" }
+    }
+    </script>
   </head>
   <body>
     <div id="root" class="bg-background"></div>

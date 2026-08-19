@@ -1,30 +1,185 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:wght@400..700&display=swap');
 @import "tailwindcss";
 
 
 *{
-  font-family:  "Outfit", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.font-mono-code{
+  font-family: "JetBrains Mono", monospace;
+}
+
+#services,
+#team,
+#projects,
+#dicover-more,
+#contact-us {
+  scroll-margin-top: 80px;
 }
 
 @theme{
-  --color-background: #f3efec;
-  --color-primary: #587d8f;
-  --color-coprimary: #2f4157;
-  --color-borderColor: #2f4157;
+  /* Core surfaces */
+  --color-background: #060a14;   /* deep space navy - page background & "ink" text on green */
+  --color-coprimary: #0e1526;    /* card / panel surface on dark bg */
+  --color-surface2: #131d33;     /* hover / raised surface */
+  --color-borderColor: #1d2740;  /* subtle hairline border on dark */
+  --color-button:#def6e7;
+
+  /* Accents */
+  --color-primary: #2fd66c;      /* signature ShiftCode green */
+  --color-primaryDark: #17a94f;  /* pressed / hover green */
+  --color-primarySoft: #17321f;  /* green tinted chip bg on dark */
+
+  /* Typography */
+  --color-text: #eef2fa;         /* primary light text on dark surfaces */
+  --color-muted: #93a0bd;        /* secondary / body text on dark surfaces */
+
+  /* Light accent panels (used sparingly for contrast, ala Figma) */
+  --color-light: #f3f6fb;
+  --color-lightMuted: #5b6478;
 }
+
 .swiper-pagination-bullet {
-  background-color: #587d8f !important; /* inactive bullet color */
-  opacity: 0.7 !important;           /* optional: less visible */
+  background-color: var(--color-muted) !important;
+  opacity: 0.5 !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #2f4157 !important; /* active bullet color (example orange) */
+  background-color: var(--color-primary) !important;
   opacity: 1 !important;
 }
 
 html {
   scroll-behavior: smooth;
+
+  /* 72px navbar + 16px visual spacing */
+  scroll-padding-top: 80px;
 }
 
+body{
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
 
+::selection{
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
 
+/* Slim, on-brand scrollbar */
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb{
+  background: var(--color-coprimary);
+  border-radius: 10px;
+  border: 2px solid var(--color-background);
+}
+::-webkit-scrollbar-thumb:hover{
+  background: var(--color-primaryDark);
+}
+
+/* Shared section rhythm: 104px left/right padding, 54px top padding on desktop */
+.section-x{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1600px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 768px){
+  .section-x{
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 1024px){
+  .section-x{
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+@media (min-width: 1280px){
+  .section-x{
+    padding-left: 104px;
+    padding-right: 104px;
+  }
+}
+
+.section-pt{
+  padding-top: 28px;
+}
+@media (min-width: 1024px){
+  .section-pt{
+    padding-top: 54px;
+  }
+}
+
+/* Continuous left-scrolling ticker used for the services strip */
+.marquee-track{
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 22s linear infinite;
+}
+.marquee-row:hover .marquee-track{
+  animation-play-state: paused;
+}
+@keyframes marqueeScroll{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+
+/* Recolors a dark/teal PNG logo to the brand green without needing an SVG */
+.logo-green{
+  filter: brightness(0) saturate(100%) invert(69%) sepia(53%) saturate(500%) hue-rotate(78deg) brightness(97%) contrast(92%);
+}
+
+/* Glow utilities */
+.glow-primary{
+  box-shadow: 0 0 0 1px rgba(47,214,108,0.18), 0 8px 40px -12px rgba(47,214,108,0.35);
+}
+.text-glow{
+  text-shadow: 0 0 30px rgba(47,214,108,0.35);
+}
+
+/* Section divider used between major sections */
+.section-divider{
+  position: relative;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--color-borderColor) 20%, var(--color-borderColor) 80%, transparent);
+  overflow: visible;
+}
+.section-divider::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 3px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  filter: blur(1px);
+  animation: dividerSlide 6s ease-in-out infinite;
+}
+@keyframes dividerSlide{
+  0%, 100% { left: 20%; opacity: .4; }
+  50% { left: 80%; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

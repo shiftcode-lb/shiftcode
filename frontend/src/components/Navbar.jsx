@@ -1,97 +1,302 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { assets, menuLinks } from '../assets/assests'; // make sure path is correct
-import { Link as ScrollLink } from 'react-scroll';
+import { useLocation } from 'react-router-dom';
+import { assets, menuLinks } from '../assets/assets';
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
-    useEffect(() => {
-  if (open) {
-    document.body.style.overflow = 'hidden'; // disables scroll (x + y)
-  } else {
-    document.body.style.overflowX = 'hidden'; // reapply only x hidden
-    document.body.style.overflowY = 'auto';   // re-enable vertical scroll
-  }
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflowX = 'hidden';
+      document.body.style.overflowY = 'auto';
+    }
 
-  return () => {
-    document.body.style.overflowX = 'hidden'; // cleanup on unmount
-    document.body.style.overflowY = 'auto';
-  };
-}, [open]);
-
-useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY < 50) {
-        setShowNavbar(true); // always show near top
-      } else if (currentScrollY > lastScrollY) {
-        setShowNavbar(false); // scrolling down hide
-      } else {
-        setShowNavbar(true); // scrolling up show
-      }
-
-      setLastScrollY(currentScrollY);
+    return () => {
+      document.body.style.overflowX = 'hidden';
+      document.body.style.overflowY = 'auto';
     };
+  }, [open]);
 
-    window.addEventListener('scroll', handleScroll);
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  const goTo = (link) => {
+    setOpen(false);
+
+    if (link.name === 'Home') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+      return;
+    }
+
+    const section = document.getElementById(link.path.replace('#', ''));
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  const goToContact = () => {
+    setOpen(false);
+
+    const section = document.getElementById('contact-us');
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  const goHome = () => {
+    setOpen(false);
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   return (
-    <div className={`border-b border-borderColor py-7 fixed top-0 w-full bg-background z-50 transition-transform duration-300
-      ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
-    <div className={`flex items-center justify-between  text-[17px]
-    w-full mx-auto px-3 sm:px-4 md:px-11 lg:px-13 xl:px-12 2xl:px-16 max-w-screen-xl
-  text-gray-600  relative transition-all`}> 
-        <img
-  src={assets.logo}
-  alt="Navbar Logo"
-  className="h-8 cursor-pointer"
-  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-/>
-        <div className={`max-sm:fixed max-sm:h-screen max-sm:w-full max-sm:top-16 
-        max-sm:border-t border-borderColor right-0 flex flex-col sm:flex-row items-start
-        sm:items-center gap-4 sm:gap-8 max-sm:p-4 transition-all duration-300 z-50 mt-6 sm:mt-0
-        ${open ? "max-sm:translate-x-0 bg-background" : "max-sm:translate-x-full"}`}>
-            {menuLinks.map((link, index) => {
-  return (
-    <button
-      key={index}
-      onClick={() => {
-        setOpen(false);
-        if (link.name === "Home") {
-          // Scroll to top of the page smoothly
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          const section = document.getElementById(link.path.replace('#', ''));
-          if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      }}
-      className="your-styles cursor-pointer bg-transparent border-none outline-none"
+    <header
+      className="
+        fixed
+        top-0
+        left-0
+        w-full
+        z-50
+        bg-background/90
+        backdrop-blur-md
+        border-b
+        border-borderColor
+      "
     >
-      {link.name}
-    </button>
-  );
-})}
-
-        </div>
-        
-        <button className='sm:hidden cursor-pointer'> 
-            <img 
-            onClick={() => setOpen(!open)}
-            src={open ? assets.close_icon : assets.menu_icon} alt="menu" />
+      {/* Main Navbar */}
+      <div
+        className="
+          section-x
+          w-full
+          h-[72px]
+          flex
+          items-center
+          justify-between
+          relative
+        "
+      >
+        {/* Logo */}
+        <button
+          type="button"
+          onClick={goHome}
+          className="
+            flex
+            items-center
+            shrink-0
+            bg-transparent
+            border-none
+            p-0
+            cursor-pointer
+          "
+          aria-label="Go to home"
+        >
+          <img
+            src={assets.logo}
+            alt="ShiftCode"
+            className="h-8 w-auto logo-green"
+          />
         </button>
 
-    </div>
-    </div>
-  )
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+          {menuLinks.map((link, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => goTo(link)}
+              className="
+                relative
+                cursor-pointer
+                bg-transparent
+                border-none
+                outline-none
+                text-muted
+                hover:text-text
+                transition-colors
+                duration-300
+                group
+              "
+            >
+              {link.name}
+
+              <span
+                className="
+                  absolute
+                  left-0
+                  -bottom-1
+                  h-[2px]
+                  w-0
+                  bg-primary
+                  transition-all
+                  duration-300
+                  group-hover:w-full
+                "
+              />
+            </button>
+          ))}
+        </nav>
+
+        {/* Desktop Start Project */}
+        <button
+          type="button"
+          onClick={goToContact}
+          className="
+            hidden
+            lg:inline-flex
+            items-center
+            justify-center
+            px-5
+            py-2.5
+            text-primary
+            border-1
+            border-primary
+            rounded-2xl
+            text-md
+            font-semibold
+            hover:bg-coprimary
+            hover:text-primary
+            transition-colors
+            duration-300
+            cursor-pointer
+            shrink-0
+          "
+        >
+          Contact Us
+        </button>
+
+        {/* Mobile / Tablet Burger */}
+        <button
+          type="button"
+          onClick={() => setOpen((prev) => !prev)}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          className="
+            lg:hidden
+            flex
+            items-center
+            justify-center
+            w-10
+            h-10
+            rounded-lg
+            bg-transparent
+            border-none
+            cursor-pointer
+            shrink-0
+          "
+        >
+          <img
+            src={open ? assets.close_icon : assets.menu_icon}
+            alt=""
+            aria-hidden="true"
+            className="
+              w-6
+              h-6
+              object-contain
+              brightness-0
+              invert
+            "
+          />
+        </button>
+      </div>
+
+      {/* Mobile / Tablet Dropdown */}
+      <div
+        className={`
+          lg:hidden
+          w-full
+          bg-background
+          overflow-hidden
+          transition-all
+          duration-300
+          ease-in-out
+          ${
+            open
+              ? 'max-h-[32rem] opacity-100 border-t border-borderColor'
+              : 'max-h-0 opacity-0'
+          }
+        `}
+      >
+        <nav
+          className="
+            w-full
+            flex
+            flex-col
+            items-center
+            justify-center
+            text-center
+            gap-2
+            py-7
+            px-4
+          "
+        >
+          {menuLinks.map((link, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => goTo(link)}
+              className="
+                w-full
+                flex
+                items-center
+                justify-center
+                text-center
+                text-muted
+                hover:text-primary
+                transition-colors
+                duration-300
+                text-lg
+                py-3.5
+                cursor-pointer
+                bg-transparent
+                border-none
+              "
+            >
+              {link.name}
+            </button>
+          ))}
+
+          <button
+            type="button"
+            onClick={goToContact}
+            className="
+              mt-4
+              px-7
+              py-3
+              bg-primary
+              text-background
+              rounded-full
+              text-sm
+              font-semibold
+              hover:bg-light
+              transition-colors
+              duration-300
+              cursor-pointer
+            "
+          >
+            Start Project
+          </button>
+        </nav>
+      </div>
+    </header>
+  );
 };
 
 export default Navbar;
