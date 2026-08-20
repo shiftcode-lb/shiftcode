@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 export const services = [
   {
     number: '01',
-    name: 'Web Development',
+    name: 'Software Development',
     description:
       'We build modern, high-performance websites and web applications tailored to your business goals. From company websites to custom platforms, we deliver scalable solutions that are fast, secure, and easy to maintain.',
     tags: [
@@ -18,7 +17,6 @@ export const services = [
       'Database Design',
     ],
   },
-
   {
     number: '02',
     name: 'UI/UX Design',
@@ -31,10 +29,9 @@ export const services = [
       'Prototyping',
       'Design Systems',
       'Responsive Design',
-      'Social Media Posts'
+      'Social Media Posts',
     ],
   },
-
   {
     number: '03',
     name: 'Cybersecurity',
@@ -49,7 +46,6 @@ export const services = [
       'Security Consulting',
     ],
   },
-
   {
     number: '04',
     name: 'AI Solutions',
@@ -64,7 +60,6 @@ export const services = [
       'Automation',
     ],
   },
-
   {
     number: '05',
     name: 'Hosting & Maintenance',
@@ -79,22 +74,31 @@ export const services = [
       'Technical Support',
     ],
   },
+  {
+    number: '06',
+    name: 'Digital Marketing',
+    description:
+      'We help businesses grow their online presence and reach their target audience through effective digital marketing strategies. From SEO to social media campaigns, we drive traffic and generate leads for your business.',
+    tags: [
+      'Search Engine Optimization',
+      'Pay-Per-Click Advertising',
+      'Social Media Marketing',
+      'Content Creation',
+      'Brand Strategy',
+      'Reels & Video Content',
+    ],
+  },
 ];
 
 const Services = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
-  // Opening/closing a row resizes the section, which leaves AOS's cached
-  // scroll-trigger offsets stale — so later scrolling can fail to
-  // re-reveal rows that AOS incorrectly thinks are still off-screen,
-  // leaving text stuck invisible (opacity: 0). Refreshing AOS after the
-  // row's own transition finishes recalculates those offsets against the
-  // new layout and fixes that.
   const toggleService = (index, isOpen) => {
     setOpenIndex(isOpen ? -1 : index);
+
     setTimeout(() => {
       AOS.refresh();
-    }, 520); // matches the row's 500ms grid-rows transition + small buffer
+    }, 520);
   };
 
   useEffect(() => {
@@ -112,7 +116,7 @@ const Services = () => {
       className="relative w-full section-x section-pt pb-24 md:pb-32 lg:pb-40"
     >
       <div className="flex w-full flex-col items-center">
-        {/* Section Heading */}
+        {/* Section heading */}
         <div className="w-full" data-aos="fade-up">
           <span className="font-mono-code text-primary text-sm tracking-[3px] uppercase">
             // services
@@ -123,10 +127,11 @@ const Services = () => {
           </h2>
         </div>
 
-        {/* Services List */}
+        {/* Services list */}
         <div className="w-full mt-10">
           {services.map((service, index) => {
             const isOpen = openIndex === index;
+            const contentId = `service-content-${index}`;
 
             return (
               <div
@@ -140,13 +145,12 @@ const Services = () => {
                   onClick={() => toggleService(index, isOpen)}
                   className="w-full flex items-center gap-4 md:gap-6 py-7 text-left cursor-pointer group"
                   aria-expanded={isOpen}
+                  aria-controls={contentId}
                 >
-                  {/* Number */}
                   <span className="font-mono-code text-sm text-muted w-8 shrink-0">
                     {service.number}
                   </span>
 
-                  {/* Service Name */}
                   <span
                     className={`text-xl md:text-2xl font-semibold transition-colors duration-300 ${
                       isOpen
@@ -157,7 +161,6 @@ const Services = () => {
                     {service.name}
                   </span>
 
-                  {/* Plus Icon */}
                   <span
                     className={`ml-auto shrink-0 transition-all duration-300 ${
                       isOpen
@@ -182,8 +185,9 @@ const Services = () => {
                   </span>
                 </button>
 
-                {/* Expandable Content */}
+                {/* Expandable content */}
                 <div
+                  id={contentId}
                   className={`grid transition-all duration-500 ease-in-out ${
                     isOpen
                       ? 'grid-rows-[1fr] opacity-100'
@@ -192,12 +196,10 @@ const Services = () => {
                 >
                   <div className="overflow-hidden">
                     <div className="pb-8 pl-0 md:pl-14 pr-2 flex flex-col md:flex-row md:items-center gap-5">
-                      {/* Description */}
                       <p className="text-muted text-base md:text-lg leading-relaxed max-w-xl md:flex-1">
                         {service.description}
                       </p>
 
-                      {/* Tags */}
                       <div className="flex flex-wrap gap-2 md:justify-end md:ml-auto md:max-w-sm">
                         {service.tags.map((tag) => (
                           <span
