@@ -41,7 +41,7 @@ const projects = [
     title: 'Dedham Airport Taxi & Livery',
     description:
       'Designed and developed a modern, responsive website and implemented local SEO strategies to improve search visibility, performance, and customer reach.',
-    image: assets.project4_boston,
+    image: assets.project5_dedham,
     url: 'https://dedhamairporttaxi.com/',
   },
 ];
