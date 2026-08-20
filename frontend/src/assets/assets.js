@@ -34,6 +34,7 @@ import roaa from "./images/team-members/roaa.png"
 
 
 
+
 // Project screenshots — drop your actual files into
 // src/assets/images/projects/ and rename these imports/paths to match.
 // For the "panorama scroll" hover effect on the Projects section to look
@@ -43,6 +44,7 @@ import project1_zahraa from "./images/projects/skincare-zahraa.jpeg";
 import project2_tafseer from "./images/projects/tafseer-compare.jpeg";
 import project3_nova from "./images/projects/nova_n8n.png"
 import project4_boston from "./images/projects/boston-dinio.jpg";
+import ptoject5_dedham from "./images/projects/dedham-airport-taxi.jpg";
 // Nova AI Chatbot has no screenshot yet — ProjectsSection.jsx keeps its
 // `image` as null so it correctly falls back to the placeholder pattern.
 
@@ -91,6 +93,7 @@ export const assets = {
     project2_tafseer,
     project3_nova,
     project4_boston,
+    ptoject5_dedham,
     ali,
     mak,
     roaa

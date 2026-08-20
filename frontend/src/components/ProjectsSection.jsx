@@ -10,6 +10,7 @@ const projects = [
     description:
       'Designed and developed a modern skincare business website focused on user experience, brand presentation, and customer engagement.',
     image: assets.project1_zahraa,
+    url: 'https://skincarebyzahraa.onrender.com/',
   },
   {
     category: 'Web Development',
@@ -17,6 +18,7 @@ const projects = [
     description:
       'Built a platform that allows users to compare Quranic tafseer sources through a clean interface designed for research and learning.',
     image: assets.project2_tafseer,
+    url: 'https://tafsir-compare.vercel.app/',
   },
   {
     category: 'AI Solution',
@@ -24,6 +26,7 @@ const projects = [
     description:
       'Developed an AI-powered chatbot capable of assisting users through intelligent conversations, automated responses, and personalized interactions.',
     image: assets.project3_nova,
+    url: 'https://nova-ai-sales-assistant.vercel.app/',
   },
   {
     category: 'SEO Optimization',
@@ -31,6 +34,15 @@ const projects = [
     description:
       'Implemented SEO strategies, local optimization, and performance improvements to increase online visibility and search engine rankings.',
     image: assets.project4_boston,
+    url: 'https://bostondiniocoach.com/',
+  },
+  {
+    category: 'Web Development & SEO Optimization',
+    title: 'Dedham Airport Taxi & Livery',
+    description:
+      'Designed and developed a modern, responsive website and implemented local SEO strategies to improve search visibility, performance, and customer reach.',
+    image: assets.project4_boston,
+    url: 'https://dedhamairporttaxi.com/',
   },
 ];
 
@@ -42,12 +54,11 @@ const ProjectsSection = () => {
     });
   }, []);
 
-  // 1 column on phones, 2 on mid screens (tablets/iPads), 3 on larger screens
   const gridCols = 'md:grid-cols-2 lg:grid-cols-3';
 
   return (
     <section
-      className="flex flex-col space-between items-center section-x section-pt"
+      className="flex flex-col justify-between items-center section-x section-pt"
       id="projects"
     >
       <div className="w-full" data-aos="fade-up">
@@ -64,9 +75,14 @@ const ProjectsSection = () => {
         className={`w-full grid grid-cols-1 ${gridCols} gap-4 mt-10`}
       >
         {projects.map((project, i) => (
-          <div
-            key={i}
+          <a
+            key={project.title}
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View ${project.title} project`}
             className="
+              block
               rounded-2xl
               overflow-hidden
               bg-light
@@ -76,6 +92,7 @@ const ProjectsSection = () => {
               group
               cursor-pointer
               w-full
+              no-underline
             "
             data-aos="fade-up"
             data-aos-delay={i * 120}
@@ -116,7 +133,7 @@ const ProjectsSection = () => {
                     "
                     style={{
                       backgroundImage:
-                        'repeating-linear-gradient(45deg,#e4ede6 0 10px,#eef4ef 10px 20px)',
+                        'repeating-linear-gradient(45deg, #e4ede6 0 10px, #eef4ef 10px 20px)',
                       backgroundSize: '100% 260%',
                     }}
                   />
@@ -134,7 +151,7 @@ const ProjectsSection = () => {
                       pointer-events-none
                     "
                   >
-                    image placeholder
+                    Image placeholder
                   </span>
                 </>
               )}
@@ -164,7 +181,7 @@ const ProjectsSection = () => {
                 {project.description}
               </p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>
